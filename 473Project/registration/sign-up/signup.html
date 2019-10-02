@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Sample TopNav Bar</title>
+
+        <link rel="stylesheet" type="text/css" href="/473Project/assets/CSS/nav.css">
+        <link rel="stylesheet" type="text/css" href="/473Project/assets/CSS/login-signup.css">
+        <script src="https://kit.fontawesome.com/767c462c99.js"></script>
+        <script src="signup.js"></script>
+    </head>
+
+    <body>
+        <!----------------------------------- Nav Bar ----------------------------------->
+        <ul>
+            <li> Logo </li>
+
+            <!-- Mens Nav Selection -->
+            <li class="dropdown">
+                 <a href="/473Project/website-files/mens-pages/Mens.html">Men's</a> 
+                    <div class="dropdown-content">
+                        <a href="#">Tops</a>
+                        <a href="#">Bottoms</a>
+                        <a href="#">Accessories</a>
+                        <a href="#">Shoes</a>
+                        <a href="#">Swimwear</a>
+                    </div>
+            </li>
+
+
+            <!-- Womens Nav Selection -->
+            <li class="dropdown">
+                 <a href="#" class="dropbtn">Women's</a>
+                    <div class="dropdown-content">
+                        <a href="#">Tops</a>
+                        <a href="#">Bottoms</a>
+                        <a href="#">Accessories</a>
+                        <a href="#">Shoes</a>
+                        <a href="#">Swimwear</a>
+                    </div>
+            </li>
+
+            <!-- Unisex Nav Selection -->
+            <li class="dropdown">
+                 <a href="#" class="dropbtn">Unisex</a>
+                    <div class="dropdown-content">
+                        <a href="#">Tops</a>
+                        <a href="#">Bottoms</a>
+                        <a href="#">Accessories</a>
+                        <a href="#">Shoes</a>
+                        <a href="#">Swimwear</a>
+                    </div>
+            </li>
+
+            <li id="cartButton"> <a href="#"> <i class="fas fa-shopping-cart"></i> </a> </li>
+            <li id="loginButton"> <a href="/473Project/registration/login/login.html" class="active">Login / Sign Up</a> </li>
+            <li id="searchContainer"> 
+                <input type="text" placeholder="Search.." size="30">
+                <button type="submit" id="searchIcon"> <i class="fa fa-search"></i> </button>
+             </li>
+        </ul>
+        <!------------------------------------------------- Signup Box --------------------------------------------------->
+
+        <div class="Page-Content">
+
+            <div class="signup-container">
+
+                <form action="signup.php" method="POST" class="signup-box"> 
+                    <h1>Sign up</h1>
+                    <a href="/473Project/registration/login/login.html" id="link">Already have an account?</a>
+                    <hr>
+
+                    <div class="input-chunk">
+                        Username * <br> 
+                        <input type="text" name="username" id="username" class="input-item" size="30" placeholder="john_doe" onchange="checkInput();">
+                    </div>
+
+                    <div class="input-chunk">
+                        First Name <br> 
+                        <input type="text" name="firstName" id="firstName" class="input-item" size="30" placeholder="John">
+                    </div>
+
+                    <div class="input-chunk">
+                        Last Name <br> 
+                        <input type="text" name="lastName" id="lastName" class="input-item" size="30" placeholder="Doe">
+                    </div>
+
+                    <div class="input-chunk">
+                        Email Address *<br> 
+                        <input type="email" name="emailAddress" id="emailAddress" class="input-item" size="30" placeholder="john_doe@doe.com">
+                    </div>
+
+                    <div class="input-chunk">
+                        Phone Number <br>   
+                        <input type="text" name="areaCode" id="areaCode" maxlength="3" size="3" class="input-item" placeholder="(123)" style="text-align: center;">-
+                        <input type="text" name="phone1" id="phone1" maxlength="3" size="3" class="input-item" placeholder="456" style="text-align: center;">-
+                        <input type="text" name="phone2" id="phone2" maxlength="4" size="4" class="input-item" placeholder="7890" style="text-align: center;">
+                    </div>
+
+                    <div class="input-chunk">
+                        Password *<br> 
+                        <input type="password" name="password1" id="pass1" class="input-item" size="30" placeholder="Password" onchange="checkInput();">
+                    </div>
+        
+                    <div class="input-chunk">
+                        Confirm Password *<br> 
+                        <input type="password" name="password2" id="pass2" class="input-item" size="30" placeholder="Password" onchange="checkInput();">
+                    </div>
+
+                    <hr>
+                    The * indicates a required field. <br>
+                    By sigining up you are agreeing   <br>
+                    to our Terms and Conditions.      <br>
+
+
+                    <input type="submit" id="submit-button" value="Sign Up">  
+                </form>
+            </div>
+        </div>
+
+        <!------------------------------------------------- Bottom Panel ------------------------------------------------->
+        <div class="bottom-panel">
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">FAQ</a>
+            <a href="#">Customer Support</a>
+        </div>
+    </body>
+</html>

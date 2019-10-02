@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Sample TopNav Bar</title>
+
+        <link rel="stylesheet" type="text/css" href="/473Project/assets/CSS/nav.css">
+        <link rel="stylesheet" type="text/css" href="/473Project/assets/CSS/login-signup.css">
+        <script src="https://kit.fontawesome.com/767c462c99.js"></script>
+        <script src="login.js"></script>
+    </head>
+
+    <body>
+        <!----------------------------------- Nav Bar ----------------------------------->
+        <ul>
+            <li> Logo </li>
+
+            <!-- Mens Nav Selection -->
+            <li class="dropdown">
+                 <a href="/473Project/website-files/mens-pages/Mens.html">Men's</a> 
+                    <div class="dropdown-content">
+                        <a href="#">Tops</a>
+                        <a href="#">Bottoms</a>
+                        <a href="#">Accessories</a>
+                        <a href="#">Shoes</a>
+                        <a href="#">Swimwear</a>
+                    </div>
+            </li>
+
+
+            <!-- Womens Nav Selection -->
+            <li class="dropdown">
+                 <a href="#" class="dropbtn">Women's</a>
+                    <div class="dropdown-content">
+                        <a href="#">Tops</a>
+                        <a href="#">Bottoms</a>
+                        <a href="#">Accessories</a>
+                        <a href="#">Shoes</a>
+                        <a href="#">Swimwear</a>
+                    </div>
+            </li>
+
+            <!-- Unisex Nav Selection -->
+            <li class="dropdown">
+                 <a href="#" class="dropbtn">Unisex</a>
+                    <div class="dropdown-content">
+                        <a href="#">Tops</a>
+                        <a href="#">Bottoms</a>
+                        <a href="#">Accessories</a>
+                        <a href="#">Shoes</a>
+                        <a href="#">Swimwear</a>
+                    </div>
+            </li>
+
+            <li id="cartButton"> <a href="#"> <i class="fas fa-shopping-cart"></i> </a> </li>
+            <li id="loginButton"> <a href="/473Project/registration/login/login.html" class="active">Login / Sign Up</a> </li>
+            <li id="searchContainer"> 
+                <input type="text" placeholder="Search.." size="30">
+                <button type="submit" id="searchIcon"> <i class="fa fa-search"></i> </button>
+             </li>
+        </ul>
+        <!------------------------------------------------- Signup Box --------------------------------------------------->
+
+        <div class="Page-Content">
+
+            <div class="signup-container">
+
+                <form action="login.php" method="POST" class="signup-box"> 
+                    <h1>Login</h1>
+                    <hr>
+
+                    <div class="input-chunk">
+                        Username <br> 
+                        <input type="text" name="username" id="username" class="input-item" size="24" placeholder="john_doe" onchange="checkInput();">
+                    </div>
+
+                    <div class="input-chunk">
+                        Password <br> 
+                        <input type="password" name="password" id="password" class="input-item" size="24" placeholder="John" onchange="checkInput();">
+                    </div>
+
+                    <br> <a href="/473Project/registration/sign-up/signup.html" id="link">Need an account?</a> <br>
+                    <input type="submit" id="submit-button" value="Login">  
+                </form>
+            </div>
+        </div>
+
+        <!------------------------------------------------- Bottom Panel ------------------------------------------------->
+        <div class="bottom-panel">
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">FAQ</a>
+            <a href="#">Customer Support</a>
+        </div>
+    </body>
+</html>

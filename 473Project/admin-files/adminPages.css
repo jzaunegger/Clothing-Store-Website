@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/************************ CSS for Product and User Pages ******************************/
+span{
+    font-size: 16pt;
+}
+
+.formBlock{
+    background-color: lightgray;
+    border-radius: 15px;
+    padding: 3%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.formBlockElement, .submitButton{
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.submitButton:hover{
+    background-color: black;
+    color: white
+}

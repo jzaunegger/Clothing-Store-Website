@@ -1,0 +1,116 @@
+.Page-Content{
+    width: 80%;
+    margin-left: 10%;
+    min-height: 100vh;
+}
+
+.category{
+    margin-bottom: 5%;
+}
+
+.category .Header{
+    background-color: #555555;
+    color: white;
+    font-size: 16pt;
+    padding: 15px;
+    border-radius: 10px 10px 0px 0px;
+    text-align: right;
+}
+
+.category .Footer{
+    background-color: #555555;
+    color: white;
+    padding: 15px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+/***************************** CSS for the Slideshow page *****************************/
+
+.image-slideshow{
+    max-width: 100%;
+    background-color: lightgray;
+
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.slide{
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.slide img{
+    vertical-align: middle;
+}
+
+.price{
+    color: #f2f2f2;
+    background-color: rgba(0,0,0,0.8);
+    font-size: 16pt;
+    padding: 8px 12px;
+    text-align: right;
+}
+
+.description{
+    color: #f2f2f2;
+    background-color: rgba(0,0,0,0.8);
+    font-size: 14pt;
+    padding: 8px 12px;
+    text-align: center;
+}
+
+#arrowButtonLeft, #arrowButtonRight{
+    font-size: 20pt;
+    color: #555555;
+    line-height: 80%;
+    padding: 20px;
+}
+
+#arrowButtonLeft:hover{
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 7px 0px 0px 7px;
+    color: white;
+    cursor: pointer;
+}
+
+#arrowButtonRight:hover{
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 0px 7px 7px 0px;;
+    color: white;
+    cursor: pointer;
+}
+
+.shopButton{
+    border: none;
+    border-radius: 10px;
+    color: black;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.shopButton:hover{
+    cursor: pointer;
+    background-color: rgb(231, 231, 231);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+/** CSS for the Signup page**/
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add Product</title>
+
+        <link rel="stylesheet" href="/473Project/admin-files/adminPages.css">
+    </head>
+
+    <body>
+        <div class="formBlock">
+            <form action="AddProduct.php" method="post">
+                <span>Add Product</span>
+                <br><br>
+
+                Product Name <br>
+                <input type="text" class="formBlockElement" name="ProductName">
+                <br><br>
+
+                Description <br>
+                <input type="text" class="formBlockElement" name="ProductDesc">
+                <br><br>
+
+                Price <br>
+                <input type="number" class="formBlockElement" name="ProductPrice" min="0" step=".01">
+                <br><br>
+
+                Sex<br>
+                <input type="radio" name="M-sex" value="male" checked> Male<br>
+                <input type="radio" name="W-sex" value="female"> Female<br>
+                <input type="radio" name="U-sex" value="unisex"> Unisex
+                <br><br>
+
+                Category <br>
+                <select name="category">
+                    <option value="Tops">Tops</option>
+                    <option value="Bottoms">Bottoms</option>
+                    <option value="Shoes">Shoes</option>
+                    <option value="Swimwear">Swimwear</option>
+                    <option value="Accessories">Accessories</option>
+                </select> 
+                <br><br>
+
+                <input type="submit" class="submitButton" value="Add Product">
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content-area{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.content-area h1{
+    text-align: center;
+}
+
+.parralax-1{
+    background-image: url("/473Project/assets/images/index/clothing-shelf.jpg");
+    height: 100vh; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parralax-2{
+    background-image: url("/473Project/assets/images/index/man-standing.jpg");
+    height: 100vh; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parralax-3{
+    background-image: url("/473Project/assets/images/index/woman-front.jpg");
+    height: 100vh; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parralax-4{
+    background-image: url("/473Project/assets/images/index/unisex.jpg");
+    height: 100vh; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parralax-button{
+    float: right;
+    margin-bottom: 5%;
+    font-size: 12pt;
+    padding: 7px;
+
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #555555;
+}
+
+.parralax-button:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    color: lightgray;
+}
+
+.bottom-panel{
+    background-color: #555555;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.bottom-panel a{
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+}
+
+.bottom-panel a:hover{
+    color: lightgray;
+}
