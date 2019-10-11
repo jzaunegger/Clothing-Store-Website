@@ -42,12 +42,46 @@ function convertPhoneNumber(areaCode, phone1, phone2){
 
 }
 
+// Check if email is valid.
+/************************************************************************************************************************************/
+function checkEmail(emailAddress){
+    // Clear shadows, initalize variables
+    document.getElementById("emailAddress").style.boxShadow = "none";
+    var validFlag = false;
+
+    // Check if address has been entered
+    if(emailAddress.length == 0){
+        document.getElementById("emailAddress").style.boxShadow = "0px 0px 15px rgb(180, 0, 0)";
+        return validFlag;
+    }
+    
+    // Check if @ sign is present
+    var atIndex = emailAddress.indexOf('@');
+    if(atIndex == -1){
+        document.getElementById("emailAddress").style.boxShadow = "0px 0px 15px rgb(180, 0, 0)";
+        return validFlag;
+    }
+
+    // Check if . is present
+    var dotIndex = emailAddress.indexOf('.');
+    if(dotIndex == -1){
+        document.getElementById("emailAddress").style.boxShadow = "0px 0px 15px rgb(180, 0, 0)";
+        return validFlag;
+    }
+    
+    // Set shadow to green
+    document.getElementById("emailAddress").style.boxShadow = "0px 0px 15px rgb(0, 180, 0)";
+    validFlag = true;
+    return validFlag;
+}
+
 // Check if username is taken. Interacts with getUsers.php
 /************************************************************************************************************************************/
 function checkUsername(username){
     // Clear box shadow on username, initalize variables
     document.getElementById("username").style.boxShadow = "none";
     var xhttp;
+
     var flag = false;
 
     // Check that username is not empty
@@ -66,7 +100,6 @@ function checkUsername(username){
 
             // Iterate through array
             for(i=0; i<userList.length; i++){
-
                 // Check if username is present, change box shadow color
                 if(userList[i].substr(1) == username){
                     document.getElementById("username").style.boxShadow = "0px 0px 15px rgb(180, 0, 0)";
@@ -75,7 +108,6 @@ function checkUsername(username){
 
                 // If username is not present, change box shadow color
                 else{
-                    flag = true;
                     document.getElementById("username").style.boxShadow = "0px 0px 15px rgb(0, 180, 0)";
                     return flag;
                 }
@@ -91,12 +123,16 @@ function checkUsername(username){
 /************************************************************************************************************************************/
 function checkInput(){
     var username = document.getElementById("username").value;
-    var validUsername = checkUsername(username);
+    var flag = checkUsername(username);
+    console.log(flag);
+
+
 
     var firstName = document.getElementById("firstName").value;
     var lastName = document.getElementById("lastName").value;
 
     var emailAddress = document.getElementById("emailAddress").value;
+    var validEmail = checkEmail(emailAddress);
 
     var areaCode = document.getElementById("areaCode").value;
     var phone1 = document.getElementById("phone1").value;
@@ -111,5 +147,7 @@ function checkInput(){
     if(passwordMatches == true){
         document.getElementById("submit-button").style.visibility = "visible";
     }
+
+    console.log(flag + " " + validEmail + " " + passwordMatches);
 
 }

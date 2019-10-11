@@ -29,15 +29,7 @@
     
     // Close the connection.
     CloseConnection($connection);
-
-    // Check if the username in question is taken. 
-    for($i=0; $i<=$counter-1; $i++){
-        //echo $takenUsernames[$i];
-
-    }
-
+    
     $JSON = json_encode($takenUsernames);
     echo $JSON;
-
-    //print_r($takenUsernames);
 ?>

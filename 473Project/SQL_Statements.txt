@@ -1,0 +1,166 @@
+// Create Database
+CREATE DATABASE clothingCompnay;
+
+// Create Users Table
+CREATE TABLE users(
+    userID int(10) NOT NULL AUTO_INCREMENT,
+    username varchar(255),
+    password varchar(255),
+    firstName varchar(255),
+    lastName varchar(255),
+    email varchar(255),
+    phoneNumber int(20),
+    dateAdded date, 
+    timeAdded time(6),
+    dateLastEdited date,
+    timeLastEdited time(6),
+    PRIMARY KEY(userID)
+)
+
+// Security Questions Table
+CREATE TABLE userSecQuestions(
+    question1 varchar(200),
+    question2 varchar(200),
+    question3 varchar(200),
+    answer1   varchar(100),
+    answer2   varchar(100),
+    answer3   varchar(100),
+    dateAdded date,
+    timeAdded time(6),
+    dateLastEdited date,
+    timeLastEdited time(6),
+
+    userID int(10),
+    FOREIGN KEY(userID)
+    REFERENCES users(userID)
+)
+
+// User Shipping Data Table
+CREATE TABLE userShippingInfo(
+    userID      int(10),
+    shipAddress varchar(100),
+    shipCity    varchar(100),
+    shipState   varchar(50),
+    shipZip     int(5),
+
+    billAddress varchar(100),
+    billCity    varchar(100),
+    billState   varchar(50),
+    billZip     int(5),
+
+    dateAdded   date,
+    lastAdded   time(6),
+    dateLastEdited date, 
+    timeLastEdited time(6),
+
+    FOREIGN KEY(userID)
+    REFERENCES users(userID)
+)
+
+// Create Administrator Table
+CREATE TABLE admin(
+    userID int(10),
+    isAdmin tinyint(1),
+    dateAdded date,
+    timeAdded time(6),
+    dateLastEdited date,
+    timeLastEdited time(6),
+
+    FOREIGN KEY(userID)
+    REFERENCES users(userID)
+)
+
+
+// Create Product Table
+CREATE TABLE products(
+    productID int(10) NOT NULL AUTO_INCREMENT,
+    productName varchar(100),
+    productDescription varchar(500),
+    sex varchar(6),
+    category varchar(50),
+    subcategory varchar(50),
+    price float(6.2),
+    dateAdded date,
+    timeAdded time(6),
+    dateLastEdited date, 
+    timeLastEdited time(6),
+
+    PRIMARY KEY(productID)
+)
+
+// Create Pant Size Table
+
+// Create Shirt Size Table
+CREATE TABLE shirtSizes(
+    productID int(10),
+    smallQty int(6), 
+    mediumQty int(6),
+    largeQty int(6),
+    xlargeQty int(6),
+    xxlargeQty int(6),
+
+    FOREIGN KEY(productID)
+    REFERENCES products(productID)
+)
+
+// Create Shoe Size Table
+CREATE TABLE shoeSizes(
+    productID      int(10),
+    fourQty        int(6),
+    fourHalfQty    int(6),
+    fiveQty        int(6),
+    fiveHalfQty    int(6),
+    sixQty         int(6),
+    sizHalfQty     int(6),
+    sevenQty       int(6),
+    senvenHalfQty  int(6),
+    eightQty       int(6),
+    eightHalfQty   int(6),
+    nineQty        int(6),
+    nineHalfQty    int(6),
+    tenQty         int(6),
+    tenHalfQty     int(6),
+    elevenQty      int(6),
+    elevenHalfQty  int(6),
+    twelveQty      int(6),
+    thirteenQty    int(6),
+    fourteenQty    int(6),
+    fifteenQty     int(6),
+    sixteenQty     int(6),
+
+    FOREIGN KEY(productID)
+    REFERENCES products(productID)
+)
+
+// Create Orders Table
+CREATE TABLE orders(
+    orderID         int(10) NOT NULL AUTO_INCREMENT,
+    userID          int(10),
+    productID       int(10),
+
+    dateOrdered     date, 
+    timeOrdered     time(6),
+    shipmentNumber  int(10), 
+    orderTotal      float,
+
+    PRIMARY KEY(orderID),
+
+    FOREIGN KEY(userID)
+    REFERENCES users(userID),
+
+    FOREIGN KEY(productID)
+    REFERENCES products(productID)
+)
+
+
+// Create Shipment Table
+CREATE TABLE shipments(
+    userID int(10),
+    orderID int(10),
+
+    FOREIGN KEY(userID)
+    REFERENCES users(userID),
+
+    FOREIGN KEY(orderID)
+    REFERENCES orders(orderID)
+)

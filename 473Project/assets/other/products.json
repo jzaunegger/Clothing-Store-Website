@@ -1,0 +1,43 @@
+{
+    "categories":{
+        "tops":{
+            "subcategoryNames": ["Sweaters", "Sweatshirts", "Hoodies", "T-Shirts", "Long Sleeves", "Short Sleeve", "Tank Tops", "Jackets", "Coats", "Dress Shirts"],
+            "subcategoryValues":["sweater", "sweatshirt", "hoodie", "t-shirt", "long-sleeve", "short-sleeve", "tank-top", "jacket", "coat", "dress-shirts"],
+            "sizeNames": ["Extra Small", "Small", "Medium", "Large", "Extra Large", "Extra Exta Large", "Three Extra Large"],
+            "sizeValues": ["XS", "S", "M", "L", "XL", "XXL", "3XL"],
+            "sizeChart": "shirts"
+        },
+
+        "bottoms":{
+            "subcategoryNames": ["Jeans", "Shorts", "Athletic Shorts", "Kakhis", "Dress Pants", "Skirts", "Sweat Pants", "Joggers"],
+            "subcategoryValues":["jean", "short", "athletic-short", "kakhi", "dress-pant", "skirt", "sweat-pant", "jogger"],
+            "sizeNames": ["Extra Small", "Small", "Medium", "Large", "Extra Large", "Extra Exta Large", "Three Extra Large"],
+            "sizeValues": ["XS ", "S  ", "M  ", "L  ", "XL ", "XXL", "3XL"],
+            "sizeChart": "pants"
+        },
+
+        "shoes":{
+            "subcategoryNames": ["Sneakers", "Running", "Dress", "Sandals", "Boots", "Casual"],
+            "subcategoryValues":["sneaker", "running", "dress", "sandal", "boot", "casual"],
+            "sizeNames": [6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 13, 14, 15, 16],
+            "sizeValues": ["6", "6.5", "7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13", "14", "15", "16"],
+            "sizeChart": "shoes"
+        },
+
+        "accessories":{
+            "subcategoryNames": ["Belts", "Socks", "Pins", "Hats", "Ties", "Braclets", "Necklaces", "Rings", "Watches", "Cologne", "Perfume"],
+            "subcategoryValues":["belt", "socks", "pin", "hat", "tie", "bracelet", "necklace", "ring", "watch", "cologne", "perfume"], 
+            "sizeNames": ["Extra Small", "Small", "Medium", "Large", "Extra Large", "Extra Exta Large", "Three Extra Large", "One Size Only"],
+            "sizeValues":["XS", "S", "M", "L", "XL", "XXL", "3XL", "OSFA"],
+            "sizeChart": "mixed"
+        },
+
+        "swimwear":{
+            "subcategoryNames": ["Trunks", "Jammers", "Speedos", "Bikinis", "One Pieces", "Towels"],
+            "subcategoryValues":["trunk", "jammer", "speedo", "bikini", "one-peice", "towel"], 
+            "sizeNames": ["Extra Small", "Small", "Medium", "Large", "Extra Large", "Extra Exta Large", "Three Extra Large", "One Size Only"],
+            "sizeValues": ["XS", "S", "M", "L", "XL", "XXL", "3XL", "OSFA"],
+            "sizeChart": "mixed"
+        }
+    }
+}

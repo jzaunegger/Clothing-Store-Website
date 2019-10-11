@@ -4,8 +4,8 @@
         $user = "root";
 
         // Enter your password here
-        $password="";
-        $database = "473-database";
+        $password="Winnie4497!";
+        $database = "clothingcompany";
 
         $connection = new mysqli($host, $user, $password, $database) or die ("Connection failed: %s\n". $connection -> error);
 

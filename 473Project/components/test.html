@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Grid</title>
+</head>
+
+<style>
+    .container{
+        margin: 0;
+        padding: 0;
+    }
+
+    .container::after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .left{
+        width: 20%;
+        float: left;
+    }
+
+    .filter-box{
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    flex: 20%;
+    }
+
+
+    .filter-button{
+        float: right;
+        border: none;
+        border-radius: 5px;
+        background-color: transparent;
+        color: white;
+        padding: 5px;
+        margin: 1%;
+    }
+
+    .filter-button:hover{
+        cursor: pointer;
+        color: black;
+        background-color: white;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+
+    .right{
+        width: 80%;
+        float: left;
+        background-color: blue;
+    }
+</style>
+
+<body>
+    <div class="container">
+
+        <div class="left">
+                <div class="filter-box">
+                        Sort By 
+                        <select>
+                            <option>New Arrivals</option>
+                            <option>A to Z</option>
+                            <option>Z to A</option>
+                            <option>Price Low to High</option>
+                            <option>Price High to Low</option>
+                        </select>
+                        <br>
+                
+                        <hr>
+                        Sub-Category <br>
+                        <input type="checkbox" name="category"> <label>Sweater </label> <br>
+                        <input type="checkbox" name="category"> <label>Sweatshirt</label> <br>
+                        <input type="checkbox" name="category"> <label>Hoodie</label> <br>
+                        <input type="checkbox" name="category"> <label>T-Shirt</label> <br>
+                        <input type="checkbox" name="category"> <label>Long Sleeve</label> <br>
+                        <input type="checkbox" name="category"> <label>Short Sleeve</label> <br>
+                        <input type="checkbox" name="category"> <label>Tank Tops</label> <br>
+    
+                        <hr>
+                        Sizes <br>
+                        <input type="checkbox" name="size"> <label> XS </label> <br>
+                        <input type="checkbox" name="size"> <label> S </label> <br>
+                        <input type="checkbox" name="size"> <label> M </label> <br>
+                        <input type="checkbox" name="size"> <label> L </label> <br>
+                        <input type="checkbox" name="size"> <label> XL </label> <br>
+                        <input type="checkbox" name="size"> <label> XXL </label> <br>
+                        <input type="checkbox" name="size"> <label> 3XL </label> <br>
+    
+                        <hr>
+                        <input type="button" value="Filter Products" class="filter-button">
+        </div>
+
+        <div class="right">
+            Product Grid
+            <table>
+                <tr></tr>
+            </table>
+        </div>
+
+    </div>
+    
+</body>
+</html>

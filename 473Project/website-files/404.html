@@ -1,14 +1,10 @@
-<!-- Rough Layout for Project Design. Still needs AngularJS components. -->
-<!-- Developed by Jackson Zaunegger -->
-<!-- Images from Pixabay.com, and W3Schools used as a refrence. -->
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Men's Clothing</title>
+        <title>Mens Tops</title>
 
         <link rel="stylesheet" type="text/css" href="/473Project/assets/CSS/nav.css">
         <link rel="stylesheet" type="text/css" href="/473Project/assets/CSS/pages.css">
@@ -16,13 +12,13 @@
     </head>
 
     <body>
-        <!-------------------------------------------------- Nav Bar ------------------------------------------------>
+        <!----------------------------------- Nav Bar ----------------------------------->
         <ul>
             <!-- Mens Nav Selection -->
             <li class="dropdown">
-                 <a href="Mens.html" class="active">Men's</a> 
+                 <a href="#">Men's</a> 
                     <div class="dropdown-content">
-                        <a href="/473Project/website-files/mens-pages/Mens-Tops.html">Tops</a>
+                        <a href="#">Tops</a>
                         <a href="#">Bottoms</a>
                         <a href="#">Accessories</a>
                         <a href="#">Shoes</a>
@@ -56,50 +52,50 @@
             </li>
 
             <li id="cartButton"> <a href="#"> <i class="fas fa-shopping-cart"></i> </a> </li>
-            <li id="loginButton"> <a href="/473Project/registration/login/login.html">Login / Sign Up</a> </li>
+            <li id="loginButton"> <a href="#">Login / Sign Up</a> </li>
             <li id="searchContainer"> 
                 <form action="search.php" method="POST">
                     <input type="text" placeholder="Search.." size="30" id="searchBar">
                     <button type="submit" id="searchIcon"> <i class="fa fa-search"></i> </button>
                 </form>
-            </li>
+             </li>
         </ul>
 
-        <!-------------------------------------------------- Page Contents ------------------------------------------------>
+        <!------------------------------------------------ Page Contents ------------------------------------------------->
         <div class="Page-Content">
+            
+            <div class="error-container">
 
-            <h1 class="Page-Title">Men's Clothing</h1>
+                <img src="/473Project/assets/images/man-leaning.jpg">
 
-            <div class="category">
-                <div class="Header"> New Arrivals </div>
+                <h1 class="header">404</h1>
+                <h1 class="header2">Page Not Found</h1>
 
-                <div class="image-slideshow">
-                    <i class="fas fa-chevron-left" id="arrowButtonLeft"  onclick="plusSlides(-1)"></i>
+                <p class="message">
+                    We know our products are awesome, but you are trying to load something that doesn't exist. 
+                    Sorry we can't load anything here for you, but perhaps we have something else thay may interest you.
+                    You can check out our products using the Navigation bar at the top of the screen, or you could visit
+                    our home page using the button below. 
+                </p>
 
-                    <div class="slide">
-                        <div class="price">$50.00</div>
-                        <img src="/473Project/assets/images/index/dancer2.jpg" style="width:100%">
-                        <div class="description">White sweater</div>
-                    </div>
-
-                    <i class="fas fa-chevron-right" id="arrowButtonRight"  onclick="plusSlides(1)"></i>
-                </div>
-
-                <div class="Footer"> 
-                    <button class="shopButton"> Shop New Arrivals </button>
-                </div>
-
+                <button class="HomeBTN" onclick="linkHome();">Home</button>
             </div>
 
         </div>
-
-         <!------------------------------------------------- Bottom Panel ------------------------------------------------->
-         <div class="bottom-panel">
+        <!------------------------------------------------- Bottom Panel ------------------------------------------------->
+        <div class="bottom-panel">
             <a href="#">About Us</a>
             <a href="#">Careers</a>
             <a href="#">FAQ</a>
             <a href="#">Customer Support</a>
         </div>
-        
+
+        <script src="/473Project/website-files/product-grid.js"></script>
+
+        <script>
+            function linkHome(){
+                window.location.href="/473Project/website-files/index-page/index.html"
+            }
+        </script>
     </body>
 </html>
