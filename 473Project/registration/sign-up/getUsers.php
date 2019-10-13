@@ -4,7 +4,8 @@
     $counter = 0;
 
     // Include Connection File and Open a connection.
-    include 'MySQL_ConnectionFile.php';
+    $connectionFile = $_SERVER['DOCUMENT_ROOT'] . "/473Project/assets/other/MySQL_ConnectionFile.php";
+    include $connectionFile;
     $connection = OpenConnection();
     
     if(!$connection){
@@ -22,7 +23,6 @@
             $counter = $counter + 1;
         }
     }
-
     else{
         echo "Error: " . $getUsernames  . "<br>" . $connection->error;
     }

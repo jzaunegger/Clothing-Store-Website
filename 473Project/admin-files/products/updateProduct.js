@@ -289,6 +289,56 @@ function loadJSON(){
     xml.send();
 }
 
+// Inject the product data into the update form
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function loadEditData(productID){
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            var productData = JSON.parse(this.responseText);
+
+            document.getElementById("productIndex").value = productID;
+
+            // Set the name
+            document.getElementById("productName").value = productData.name;
+            document.getElementById("productNameHeader").innerText = productData.name;
+
+            // Set the description
+            document.getElementById("productDescription").value = productData.desc;
+
+            // Set the price
+            document.getElementById("price").value = productData.price;
+
+            // Check the correct sex
+                if(productData.sex == "Male"){
+                    document.getElementById("sexMen").checked = true;
+                }
+
+                if(productData.sex == "Female"){
+                    document.getElementById("sexWomen").checked = true;
+                }
+
+                if(productData.sex == "Unisex"){
+                    document.getElementById("sexUnisex").checked = true;
+                }
+
+            // Select the correct category
+            document.getElementById("category").value = productData.cat;
+            
+            loadJSON();
+
+            // Select the correct subcategory
+            document.getElementById("subCategory").value = productData.subcat;
+        }
+    }
+
+    xhttp.open("GET", "loadProductData.php?q="+productID, true);
+    xhttp.send();
+}
+
 // Onload function call
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-window.onload=loadJSON();
+loadJSON();
+var productID = document.getElementById("productID").innerHTML;
+loadEditData(productID);

@@ -16,7 +16,8 @@
             $password2 = $_POST["ConfirmPassword"];
 
             // Include Connection File and Open a connection.
-            include 'MySQL_ConnectionFile.php';
+            $connectionFile = $_SERVER['DOCUMENT_ROOT'] . "/473Project/assets/other/MySQL_ConnectionFile.php";
+            include $connectionFile;
             $connection = OpenConnection();
 
             // If connection fails throw error.
