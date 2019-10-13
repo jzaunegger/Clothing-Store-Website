@@ -22,10 +22,4 @@ For the website to make queries to the database, the MySQL Connection Files must
 
 Next, we need to create a database. In phpMyAdmin click the Databases tab, and create a new database and call it whatever you want. In the 473 Project Folder there is a file called "SQL_Statements.txt" that contains the SQL statements needed to create the necessary tables in the database. 
 
-After the account has been configured and the tables have been created, you will need update the connection files. You will need to edit the host, user, password, and database name. You can find the files at the following paths:
-
-       /473Project/admin-files/products/MySQL_ConnectionFile.php
-       /473Project/admin-files/users/MySQL_ConnectionFile.php
-       /473Project/registration/sign-up/MySQL_ConnectionFile.php
-       
-     
+After the account has been configured and the tables have been created, you will need update the connection file. You will need to edit the host, user, password, and database name. You can find the file at the path: /473Project/assets/other/MySQL_ConnectionFile.php
