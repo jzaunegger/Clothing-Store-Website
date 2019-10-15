@@ -10,7 +10,6 @@
     </head>
 
     <body>
-        <h1>Upload Summary</h1>
     <?php 
         // Pull data from Add Product.html
         $productName = $_POST["ProductName"];
@@ -39,39 +38,40 @@
                  VALUES(' $productName', '$productDesc', '$sex', '$category', '$subCategory', '$productPrice', '$date', '$time', '$date', '$time')";
 
         // Submit query, throw error if one occurs
-        if($connection -> query($sql) === TRUE){
-            echo "Product successfully added to the database.";
-        } 
-        else{
+        if($connection -> query($sql) === FALSE){
             echo "Error: " . $sql . "<br>" . $connection->error;
-        }
+        } 
 
         //Close the connection.
         CloseConnection($connection);
     ?>
 
-    <br><br>
-    <span> Product Name: <?=$productName;?> </span>
-    <br><br>
+    <div class="formBlock">
+        <span>Upload Summary</span>
+        <hr><br>
 
-    <span> Product Description: <?=$productDesc;?> </span>
-    <br><br>
+        <span> Product Name: <?=$productName;?> </span>
+        <br><br>
 
-    <span> Product Price: <?=$productPrice;?> </span> 
-    <br><br>
+        <span> Product Description: <?=$productDesc;?> </span>
+        <br><br>
 
-    <span> Product Sex: <?=$sex;?> </span> 
-    <br><br>
+        <span> Product Price: <?=$productPrice;?> </span> 
+        <br><br>
 
-    <span> Product Category: <?=$category;?> </span> 
-    <br><br>
+        <span> Product Sex: <?=$sex;?> </span> 
+        <br><br>
 
-    <span> Product Sub-Category: <?=$subCategory;?> </span> 
-    <br><br>
+        <span> Product Category: <?=$category;?> </span> 
+        <br><br>
 
-    
-    <button onclick="returnToAdmin();">Done</button>
-    <button onclick="addAnotherProduct();">Add Another Product</button>
+        <span> Product Sub-Category: <?=$subCategory;?> </span> 
+        <br><br>
+
+        <button onclick="returnToAdmin();" class="submitButton">Done</button>
+        <button onclick="addAnotherProduct();" class="submitButton">Add Another Product</button>
+
+    </div>
     
     <script src="/473Project/admin-files/products/productLinks.js"></script>
     </body>
