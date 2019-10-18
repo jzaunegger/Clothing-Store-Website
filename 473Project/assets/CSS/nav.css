@@ -87,6 +87,17 @@ li.dropdown {
   cursor: pointer;
 }
 
+.logo{
+  width: 75px;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.logo:hover{
+  cursor: pointer;
+}
+
   /**************************************** CSS for Bottom Bar ************************************************/
 
 .bottom-panel{
@@ -104,4 +115,8 @@ li.dropdown {
 
 .bottom-panel a:hover{
   color: rgb(0, 206, 206);;
+}
+
+.bottom-panel .bottomActive{
+  color: rgb(0, 206, 206);
 }

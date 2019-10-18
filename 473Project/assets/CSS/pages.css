@@ -257,3 +257,68 @@
     cursor: pointer;
     background-color: gray;
 }
+
+/************ CSS for the About Page ************/
+.founder-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.founder{
+    background-color: #333;
+    color: white;
+    margin-right: 1%;
+    padding: 1%;
+}
+
+.founder h3{
+    text-align: center;
+}
+
+.founder img{
+    width: 100%;
+    border-radius: 5%;
+}
+
+/************ CSS for the Customer Support Page ************/
+.emailForm, .returnForm{
+    background-color: #333;
+    padding: 25px;
+    color: white;
+    border-radius: 20px;
+}
+
+.emailInputItem, .returnInputItem{
+    border: none;
+    color: lightgray;
+    background-color: transparent;
+}
+
+.emailInputItem:hover, .returnInputItem:hover{
+    cursor: pointer;
+}
+
+.emailTextArea, .returnTextArea{
+    background-color: lightgray;
+    width:  calc(100% - 20px);      /* calc and viewport to the rescue */
+    height: 250px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    resize: none;
+}
+
+.emailSendBTN{
+    float: right;
+    border: none;
+    padding: 7px;
+    background-color: lightgray;
+}
+
+.emailSendBTN:hover{
+    background-color: white;
+    cursor: pointer;
+}
