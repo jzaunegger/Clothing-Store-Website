@@ -25,7 +25,7 @@ function checkPassword(password1, password2){
         flag = true;
     }
 
-    // If passwords match, set pass1 to have green shadow and set pass2 to have red shadow
+    // If passwords do not match, set pass1 to have green shadow and set pass2 to have red shadow
    if(password2 != password1){
         document.getElementById("pass1").style.boxShadow = "0px 0px 15px rgb(0, 180, 0)";
         document.getElementById("pass2").style.boxShadow = "0px 0px 15px rgb(180, 0, 0)";
@@ -82,8 +82,6 @@ function checkUsername(username){
     document.getElementById("username").style.boxShadow = "none";
     var xhttp;
 
-    var flag = false;
-
     // Check that username is not empty
     if(username.length == 0){
         document.getElementById("username").style.boxShadow = "0px 0px 15px rgb(180, 0, 0)";
@@ -97,25 +95,27 @@ function checkUsername(username){
 
             // Retrieve array of names as JSON
             var userList = JSON.parse(this.responseText);
+            console.log("There are ", userList.length, " usernames that are taken.")
 
             // Iterate through array
             for(i=0; i<userList.length; i++){
+
                 // Check if username is present, change box shadow color
+                console.log(userList[i]);
+
                 if(userList[i].substr(1) == username){
                     document.getElementById("username").style.boxShadow = "0px 0px 15px rgb(180, 0, 0)";
-                    return flag;
                 }
 
                 // If username is not present, change box shadow color
                 else{
                     document.getElementById("username").style.boxShadow = "0px 0px 15px rgb(0, 180, 0)";
-                    return flag;
                 }
             }
         }
-    };
+    }
 
-    xhttp.open("GET", "getUsers.php?q="+username, true);
+    xhttp.open("GET", "getUsers.php", true);
     xhttp.send();
 }
 
@@ -123,10 +123,10 @@ function checkUsername(username){
 /************************************************************************************************************************************/
 function checkInput(){
     var username = document.getElementById("username").value;
+    console.log("The entered username is", username);
+    console.log("-------------------------------------------------");
     var flag = checkUsername(username);
     console.log(flag);
-
-
 
     var firstName = document.getElementById("firstName").value;
     var lastName = document.getElementById("lastName").value;
@@ -134,6 +134,7 @@ function checkInput(){
     var emailAddress = document.getElementById("emailAddress").value;
     var validEmail = checkEmail(emailAddress);
 
+    // Retrieve the parts of the phone number, and concatenate them together
     var areaCode = document.getElementById("areaCode").value;
     var phone1 = document.getElementById("phone1").value;
     var phone2 = document.getElementById("phone2").value;
@@ -147,7 +148,4 @@ function checkInput(){
     if(passwordMatches == true){
         document.getElementById("submit-button").style.visibility = "visible";
     }
-
-    console.log(flag + " " + validEmail + " " + passwordMatches);
-
 }

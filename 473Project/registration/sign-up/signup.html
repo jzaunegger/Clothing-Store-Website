@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Sample TopNav Bar</title>
+        <title>Sign Up</title>
 
         <link rel="stylesheet" type="text/css" href="/473Project/assets/CSS/nav.css">
         <link rel="stylesheet" type="text/css" href="/473Project/assets/CSS/login-signup.css">
@@ -14,53 +14,59 @@
 
     <body>
         <!----------------------------------- Nav Bar ----------------------------------->
-        <ul>
-            <li> Logo </li>
-
-            <!-- Mens Nav Selection -->
-            <li class="dropdown">
-                 <a href="/473Project/website-files/mens-pages/Mens.html">Men's</a> 
-                    <div class="dropdown-content">
-                        <a href="#">Tops</a>
-                        <a href="#">Bottoms</a>
-                        <a href="#">Accessories</a>
-                        <a href="#">Shoes</a>
-                        <a href="#">Swimwear</a>
-                    </div>
-            </li>
-
-
-            <!-- Womens Nav Selection -->
-            <li class="dropdown">
-                 <a href="#" class="dropbtn">Women's</a>
-                    <div class="dropdown-content">
-                        <a href="#">Tops</a>
-                        <a href="#">Bottoms</a>
-                        <a href="#">Accessories</a>
-                        <a href="#">Shoes</a>
-                        <a href="#">Swimwear</a>
-                    </div>
-            </li>
-
-            <!-- Unisex Nav Selection -->
-            <li class="dropdown">
-                 <a href="#" class="dropbtn">Unisex</a>
-                    <div class="dropdown-content">
-                        <a href="#">Tops</a>
-                        <a href="#">Bottoms</a>
-                        <a href="#">Accessories</a>
-                        <a href="#">Shoes</a>
-                        <a href="#">Swimwear</a>
-                    </div>
-            </li>
-
-            <li id="cartButton"> <a href="#"> <i class="fas fa-shopping-cart"></i> </a> </li>
-            <li id="loginButton"> <a href="/473Project/registration/login/login.html" class="active">Login / Sign Up</a> </li>
-            <li id="searchContainer"> 
-                <input type="text" placeholder="Search.." size="30">
-                <button type="submit" id="searchIcon"> <i class="fa fa-search"></i> </button>
+       <ul>
+            <!-- Logo that links to the index page -->
+            <li>
+                 <img src="/473Project/assets/images/ZAS.png" class="logo" onclick="window.location.href='/473Project/website-files/index-page/index.html'">
              </li>
-        </ul>
+    
+             <!-- Mens Nav Selection -->
+             <li class="dropdown">
+                  <a href="/473Project/website-files/mens-pages/Mens.html" class="dropbtn">Men's</a> 
+                     <div class="dropdown-content">
+                         <a href="/473Project/website-files/mens-pages/Mens-Tops.html">Tops</a>
+                         <a href="/473Project/website-files/mens-pages/Mens-Bottoms.html">Bottoms</a>
+                         <a href="/473Project/website-files/mens-pages/Mens-Accessories.html">Accessories</a>
+                         <a href="/473Project/website-files/mens-pages/Mens-Shoes.html">Shoes</a>
+                         <a href="/473Project/website-files/mens-pages/Mens-Swimwear.html">Swimwear</a>
+                     </div>
+             </li>
+    
+    
+             <!-- Womens Nav Selection -->
+             <li class="dropdown">
+                  <a href="/473Project/website-files/womens-pages/Womens.html" class="dropbtn">Women's</a>
+                     <div class="dropdown-content">
+                         <a href="/473Project/website-files/womens-pages/Womens-Tops.html">Tops</a>
+                         <a href="/473Project/website-files/womens-pages/Womens-Bottoms.html">Bottoms</a>
+                         <a href="/473Project/website-files/womens-pages/Womens-Accessories.html">Accessories</a>
+                         <a href="/473Project/website-files/womens-pages/Womens-Shoes.html">Shoes</a>
+                         <a href="/473Project/website-files/womens-pages/Womens-Swimwear.html">Swimwear</a>
+                     </div>
+             </li>
+    
+             <!-- Unisex Nav Selection -->
+             <li class="dropdown">
+                  <a href="/473Project/website-files/unisex-pages/Unisex.html" class="dropbtn">Unisex</a>
+                     <div class="dropdown-content">
+                         <a href="/473Project/website-files/unisex-pages/Unisex-Tops.html">Tops</a>
+                         <a href="/473Project/website-files/unisex-pages/Unisex-Bottoms.html">Bottoms</a>
+                         <a href="/473Project/website-files/unisex-pages/Unisex-Accessories.html">Accessories</a>
+                         <a href="/473Project/website-files/unisex-pages/Unisex-Shoes.html">Shoes</a>
+                         <a href="/473Project/website-files/unisex-pages/Unisex-Swimwear.html">Swimwear</a>
+                     </div>
+             </li>
+    
+    
+             <li id="cartButton"> <a href="#"> <i class="fas fa-shopping-cart"></i> </a> </li>
+             <li id="loginButton" class="active"> <a href="/473Project/registration/login/login.html">Login / Sign Up</a> </li>
+             <li id="searchContainer"> 
+                 <form action="search.php" method="POST">
+                     <input type="text" placeholder="Search.." size="30" id="searchBar">
+                     <button type="submit" id="searchIcon"> <i class="fa fa-search"></i> </button>
+                 </form>
+              </li>
+         </ul>
         <!------------------------------------------------- Signup Box --------------------------------------------------->
 
         <div class="Page-Content">

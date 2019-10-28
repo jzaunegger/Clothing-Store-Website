@@ -58,7 +58,7 @@ li.dropdown {
   display: block;
 }
 
-#cartButton, #loginButton{
+#cartButton, #loginButton, #accountButton{
   float: right;
 }
 

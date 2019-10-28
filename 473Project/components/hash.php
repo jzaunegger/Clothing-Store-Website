@@ -1,8 +1,9 @@
 <?php 
     $pass = $_POST["pass"];
+    $pass2 = $_POST["pass2"];
 
     $hash1 = password_hash($pass, PASSWORD_DEFAULT);
-    $hash2 = password_hash($pass, PASSWORD_BCRYPT);
+    $hash2 = password_hash($pass2, PASSWORD_DEFAULT);
 ?>
 
 <!DOCTYPE html>
