@@ -132,6 +132,29 @@ CREATE TABLE shoeSizes(
     REFERENCES products(productID)
 )
 
+// Create Pant Sizes Table
+CREATE TABLE pantSizes(
+    productID int(10),
+    
+
+    FOREIGN KEY(productID)
+    REFERENCES products(productID)
+)
+
+// Create Image Links Table
+CREATE TABLE images(
+    productID int(10),
+    imgLink1 varchar(255),
+    imgLink2 varchar(255),
+    imgLink3 varchar(255),
+    imgLink4 varchar(255),
+    imgLink5 varchar(255),
+    imgLink6 varchar(255),
+
+    FOREIGN KEY(productID)
+    REFERENCES products(productID)
+)
+
 // Create Orders Table
 CREATE TABLE orders(
     orderID         int(10) NOT NULL AUTO_INCREMENT,

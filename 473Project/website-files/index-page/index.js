@@ -1,11 +1,11 @@
 function linkMen(){
-    document.location.href = "/473Project/website-files/mens-pages/Mens.html";
+    document.location.href = "/473Project/website-files/mens-pages/Mens.php";
 }
 
 function linkWomen(){
-    document.location.href = "Womens.html";
+    document.location.href = "/473Project/website-files/womens-pages/Womens.php";
 }
 
 function linkUnisex(){
-    document.location.href = "Unisex.html";
+    document.location.href = "/473Project/website-files/unisex-pages/Unisex.php";
 }
