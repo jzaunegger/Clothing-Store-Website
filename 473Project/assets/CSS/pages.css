@@ -4,115 +4,69 @@
     min-height: 100vh;
 }
 
-.category{
-    margin-bottom: 5%;
+/*************************************** CSS for the Slideshow page ***************************************/
+.slideshow-container{
+    width: 100%;
+    position: relative;
+    margin: auto;
 }
 
-.category .Header{
-    background-color: #555555;
-    color: white;
-    font-size: 16pt;
-    padding: 15px;
-    border-radius: 10px 10px 0px 0px;
-    text-align: right;
+.image-slide{
+    display: none;
 }
 
-.category .Footer{
-    background-color: #555555;
-    color: white;
-    padding: 15px;
-    border-radius: 0px 0px 10px 10px;
-}
-
-/***************************** CSS for the Slideshow page *****************************/
-
-.image-slideshow{
-    max-width: 100%;
-    background-color: lightgray;
-
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    align-items: center;
-}
-
-.slide{
-   margin-left: auto;
-   margin-right: auto;
-}
-
-.slide img{
+img{
     vertical-align: middle;
+    width: 100%;
 }
 
-.price{
+.image-number{
     color: #f2f2f2;
-    background-color: rgba(0,0,0,0.8);
-    font-size: 16pt;
+    background-color: #333;
+    font-size: 16px;
     padding: 8px 12px;
-    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
-.description{
-    color: #f2f2f2;
-    background-color: rgba(0,0,0,0.8);
-    font-size: 14pt;
-    padding: 8px 12px;
-    text-align: center;
-}
-
-#arrowButtonLeft, #arrowButtonRight{
-    font-size: 20pt;
-    color: #555555;
-    line-height: 80%;
-    padding: 20px;
-}
-
-#arrowButtonLeft:hover{
-    background-color: rgba(0, 0, 0, 0.75);
-    border-radius: 7px 0px 0px 7px;
-    color: white;
+.prev, .next {
     cursor: pointer;
-}
-
-#arrowButtonRight:hover{
-    background-color: rgba(0, 0, 0, 0.75);
-    border-radius: 0px 7px 7px 0px;;
+    background-color: rgba(51, 51, 51, 0.75);
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
     color: white;
-    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
 }
 
-.shopButton{
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: #333;
+}
+
+.shopBTN{
     border: none;
-    border-radius: 10px;
-    color: black;
-    background-color: lightgray;
+    background-color: #333;
+    color: white;
     padding: 10px;
+    float: right;
 }
 
-.shopButton:hover{
+.shopBTN:hover{
     cursor: pointer;
-    background-color: rgb(231, 231, 231);
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    color: lightgray;
 }
-
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-  
-  @-webkit-keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-  }
-  
-  @keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-  }
-
 
 /*************************************** CSS for the Product Grid Pages ********************************************/
 .product-page{
@@ -130,7 +84,14 @@
     padding: 10px;
     border-radius: 15px;
     flex: 20%;
-    max-height: 100vh;
+    max-height: 70vh;
+}
+
+#filterSelectBox{
+    border: none;
+    background-color: lightgray;
+    color: black;
+    padding: 2px;
 }
 
 .subCatCheck, .sizeCheck{
@@ -138,6 +99,7 @@
     padding: 15px;
     display: block;
     font-size: 16pt;
+    border: none;
 }
 
 .subCatLabel, .sizeLabel{
@@ -166,7 +128,7 @@
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-/** Product CSS **/
+/*************************************** Product CSS ***************************************/
 .products-container{
     width: 80%;
     padding-left: 15px;
@@ -176,15 +138,25 @@
     flex-wrap: wrap;
 }
 
+.numProductResults{
+    width: 100%;
+    text-align: right;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
 .product{
     margin: 1%;
-    background-color: lightgray;
-    max-height: 225px;
+    background-color: #333;
+    color: white;
+    width: 22%;
 }
 
 .product:hover{
     cursor: pointer;
-    background-color: gray;
+    background-color: black;
+    box-shadow:  5px 5px 5px 5px #bbb;
 }
 
 .product-details{
@@ -197,11 +169,118 @@
 }
 
 .product img{
-    width: 160px;
-    height: 160px; 
+    width: 100%;
 }
 
-/************ CSS for the 404 Page ************/
+/*************************************** CSS for Popup Modal ***************************************/
+.popup-container-bg{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    visibility: hidden;
+}
+
+.popup-container{
+    background-color: white;
+    width: 80%;
+    margin: 10%;
+}
+
+.popup-header{
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+.popup-product-name{
+    font-size: 16pt;
+}
+
+.popup-close-button i{
+    float: right;
+    font-size: 16pt;
+}
+
+.popup-close-button:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.popup-images{
+    background-color: black;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-image{
+    width: 33%;
+    height: 66%;
+}
+
+.popup-details{
+    background-color: white;
+    color: black;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.detail{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.popup-details-left{
+    width: 75%;
+}
+
+.popup-details-right{
+    margin-left: 5%;
+    width: 25%;
+}
+
+.popup-buttons{
+    background-color: #333;
+    padding: 20px;
+}
+
+.popup-button{
+    border: none;
+    color: black;
+    background-color: lightgray;
+    padding: 15px;
+}
+
+#likeProduct:hover{
+    background-color: rgb(211, 32, 32);
+    color: white;
+    cursor: pointer;
+}
+
+#addToWishlist:hover{
+    background-color: rgb(0, 149, 235);
+    color: white;
+    cursor: pointer;
+}
+
+#addToCart{
+    float: right;
+}
+
+#addToCart:hover{
+    background-color: white;
+    cursor: pointer;
+}
+
+/*************************************** CSS for the 404 Page ***************************************/
 .error-container{
     margin-top: 1%;
     margin-bottom: 2%;
@@ -256,4 +335,102 @@
 .error-container .HomeBTN:hover{
     cursor: pointer;
     background-color: gray;
+}
+
+/*************************************** CSS for the About Page ***************************************/
+.founder-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.founder{
+    background-color: #333;
+    color: white;
+    margin-right: 1%;
+    padding: 1%;
+}
+
+.founder h3{
+    text-align: center;
+}
+
+.founder img{
+    width: 100%;
+    border-radius: 5%;
+}
+
+/*************************************** CSS for the Customer Support Page ***************************************/
+.emailForm, .returnForm{
+    background-color: #333;
+    padding: 25px;
+    color: white;
+    border-radius: 20px;
+}
+
+.emailInputItem, .returnInputItem{
+    border: none;
+    color: lightgray;
+    background-color: transparent;
+}
+
+.emailInputItem:hover, .returnInputItem:hover{
+    cursor: pointer;
+}
+
+.emailTextArea, .returnTextArea{
+    background-color: lightgray;
+    width:  calc(100% - 20px);      /* calc and viewport to the rescue */
+    height: 250px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    resize: none;
+}
+
+.emailSendBTN{
+    float: right;
+    border: none;
+    padding: 7px;
+    background-color: lightgray;
+}
+
+.emailSendBTN:hover{
+    background-color: white;
+    cursor: pointer;
+}
+
+/*************************************** Account Page ***************************************/
+.two-columns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.left-col{
+    width: 50%;
+}
+
+.left-col span{
+    font-size: 14pt;
+}
+
+.right-col{
+    width: 50%;
+}
+
+.secBTN{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    background-color: #333;
+    color: white;
+}
+
+.secBTN:hover{
+    cursor: pointer;
+    color: lightgray;
 }

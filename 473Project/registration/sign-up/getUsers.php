@@ -1,5 +1,4 @@
 <?php
-    $username = $_REQUEST["q"];
     $takenUsernames = [];
     $counter = 0;
 
@@ -23,13 +22,11 @@
             $counter = $counter + 1;
         }
     }
-    else{
-        echo "Error: " . $getUsernames  . "<br>" . $connection->error;
-    }
     
     // Close the connection.
     CloseConnection($connection);
     
+    // Encode and Send the JSON Response
     $JSON = json_encode($takenUsernames);
     echo $JSON;
 ?>

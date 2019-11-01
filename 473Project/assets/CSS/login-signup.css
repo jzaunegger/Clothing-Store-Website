@@ -1,7 +1,7 @@
 .Page-Content{
     width: 80%;
     margin-left: 10%;
-    min-height: 80vh;
+    min-height: 90vh;
 }
 
 /** CSS for the Signup and Login Pages**/
@@ -70,4 +70,28 @@
 
 #link:hover{
     text-decoration: underline;
+}
+
+/* CSS For the login submission page*/
+.login-post{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background-color: #333;
+    color: white;
+}
+
+.login-post-left{
+    width: 50%;
+    padding: 20px;
+}
+
+.login-post-right{
+    width: 50%;
+}
+
+.login-post-right img{
+    width: 100%;
+    margin: none;
 }

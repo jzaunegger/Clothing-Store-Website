@@ -89,6 +89,7 @@ function addItem(labelValue, i){
     var inputItem = document.createElement("input");
     inputItem.type = "number";
     inputItem.setAttribute("class", "sizeInput");
+    inputItem.setAttribute("name", "size" + labelValue);
     inputItem.setAttribute("id", "size-"+ i);
     inputItem.setAttribute("placeholder", "0");
     inputItem.setAttribute("min", "0");
