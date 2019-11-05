@@ -23,3 +23,5 @@ Next, we need to create a database. In phpMyAdmin click the Databases tab, and c
 After the account has been configured and the tables have been created, you will need update the connection file. You will need to edit the host, user, password, and database name. You can find the file at the path: 
 
     /473Project/assets/other/MySQL_ConnectionFile.php
+    
+After creating the SQL Tables and setting your connection file up, you will need to go to the users table and make sure isAdmin is set to default 0. You will also need to do that in the usersecquestions table, and set questionsSet to 0 as well. 
