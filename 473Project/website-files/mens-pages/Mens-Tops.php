@@ -92,8 +92,9 @@
             <!----- HTML for the Filter Box off to the left ----->
             <div class="product-page">
                 <div class="filter-box">
+                <form action="Mens-Tops.php" method="GET">
                     Sort By 
-                    <select id="filterSelectBox">
+                    <select id="filterSelectBox" name="filter-select-box">
                         <option>New Arrivals</option>
                         <option>A to Z</option>
                         <option>Z to A</option>
@@ -113,7 +114,8 @@
                     <ul id="subcategory-sizes"></ul>
 
                     <hr>
-                    <input type="button" value="Filter Products" class="filter-button">
+                    <input type="submit" value="Filter Products" class="filter-button">
+                </form>
                 </div>
 
                 
@@ -129,11 +131,59 @@
                         $search_sex = "Male";
                         $search_category = "Tops";
                         $counter = 0;
-                        
+
+                        $subcatString = "";
+                        $sizesString = "";
+
                         $ids = [];
                         $names = [];
                         $prices = [];
 
+                        // Pull variables from Product Filter Form
+                        if (isset($_GET['filter-select-box'])) {
+                            $filterBox = $_GET['filter-select-box'];
+                        }
+
+                        if(isset($_GET['subcategory-box'])){
+                            $subcategories = $_GET['subcategory-box'];
+                            $subcats = [];
+
+                            // Iterate through the subcategories
+                            $N = count($subcategories);
+
+                            if($N > 0){
+                                for($i=0; $i < $N; $i++){
+                                    array_push($subcats, $subcategories[$i]);
+
+                                    if($i==0){
+                                        $subcatString = $subcatString . $subcategories[$i];
+                                    }
+                                    else{
+                                        $subcatString = $subcatString . ", " . $subcategories[$i];
+                                    }
+                               }
+                            }
+
+                            
+                        }
+
+                        if(isset($_GET['size-box'])){
+                            $sizes = $_GET['size-box'];
+
+                            // Iterate through the subcategories
+                            $R= count($sizes);
+
+                            if($R > 0){
+                                for($i=0; $i < $R; $i++){
+                                    if($i==0){
+                                        $sizesString = $sizesString . $sizes[$i];
+                                    }
+                                    else{
+                                        $sizesString = $sizesString . ", " . $sizes[$i];
+                                    }
+                               }
+                            }
+                        }
 
                         // Include Connection File and Open a Connection
                         $connectionFile = $_SERVER['DOCUMENT_ROOT'] . "/473Project/assets/other/MySQL_ConnectionFile.php";
@@ -146,7 +196,24 @@
                         }
 
                         // Construct sql statement and send query
-                        $sql = "SELECT productID, productName, price FROM products WHERE sex='$search_sex' AND category='$search_category'";
+                        $sql = "SELECT productID, productName, price FROM products 
+                            WHERE sex='$search_sex' AND category='$search_category'";
+
+                        // Check if subcategories are set 
+                        if(isset($subcats)){
+                            $subcatCount = count($subcats);
+
+                            for($X=0; $X < $subcatCount; $X++){
+                                if($X==0){
+                                    $sql = $sql . " AND subcategory='" . $subcats[$X] . "'";
+                                }
+                                else{
+                                    $sql = $sql . " OR subcategory='" . $subcats[$X] . "'";
+                                }
+                            }
+
+                        }
+
                         $data = $connection->query($sql);
 
                         // Check if query failed, if so throw error
@@ -166,7 +233,37 @@
                         }
 
                         // Echo product data onto page
+                        if(isset($filterBox)){
+
+                            echo("<span class='filter-name'>Filtering by " . $filterBox);
+                            if($subcatString != ""){
+                                echo(", " . $subcatString);
+                            }
+
+                            if($sizesString != ""){
+                                echo(", " . $sizesString);
+                            }
+
+                            echo("</span>");
+                        }
+                        // No filters are set
+                        else{
+                            echo("<span class='filter-name'>All Mens Tops</span>");
+                        }
+                        // Display number of results
                         echo("<span class='numProductResults'> Displaying ". $counter. " results...</span>");
+                        if($counter == 0){
+                            echo("
+                                    <div class='no-results-box'>
+                                        <h1> Sorry, there were no results found. </h1>
+                                    </div>
+                            ");
+                        }
+
+                        else{
+
+                        }
+
 
                         for($i =0; $i<$counter; $i++){
                             echo("
@@ -229,20 +326,8 @@
                         }
 
                         //Close the connection.
-                        CloseConnection($connection);
+                        CloseConnection($connection);  
                     ?>
-
-                    <!--
-                    <div class="product"> 
-                        <img src="/473Project/assets/images/index/woman-front.jpg"> 
-
-                        <div class="product-details">
-                            <label class="product-name">White Sweater</label> <br>
-                            <label class="product-price">$20.00</label>
-                        </div>
-                    </div>
-                    -->
-                   
                 </div>
             </div>
 
@@ -267,16 +352,23 @@
 
                 <div class="popup-details">
                     <div class="popup-details-left">
-                        <label class="detail">Product Description </label><br>      <label id="productDescription"></label> <br><br>
-                        <label class="detail">Price                </label><br>     <label id="productPrice"></label> <br><br>
-                        <label class="detail">Sex                 </label><br>      <label id="productSex"></label> <br><br>
-                        <label class="detail">Category             </label><br>     <label id="productCategory"></label> <br><br>
-                        <label class="detail">Subcategory          </label><br>     <label id="productSubcategory"></label> <br><br>
+                        <label class="detail">Product Description:</label>  <label id="productDescription"></label> <br><br>
+                        <label class="detail">Sex:</label>                  <label id="productSex"></label> <br><br>
+                        <label class="detail">Category:</label>             <label id="productCategory"></label> <br><br>
+                        <label class="detail">Subcategory:</label>          <label id="productSubcategory"></label> <br><br>
                     </div>
 
                     <div class="popup-details-right">
-                        <label class="detail">Quantity </label><br>                 <label id="quantity"></label> <br><br>
-                        <label class="detail">Size </label><br>                     <label id="size"></label> <br><br>
+                        <label class="detail">Price</label>                 <label id="productPrice"></label> <br><br>
+                        <label class="detail">Quantity </label><br>         <label id="quantity"></label>
+                        <input type="number" min="0" step="1" max="100" placeholder="0" class="popup-input"><br><br>
+
+                        <label class="detail">Size </label><br>
+
+
+                        <select class="detail-sizebox" id="detailSizebox">
+                            
+                        </select> 
                     </div>
                 </div>
 

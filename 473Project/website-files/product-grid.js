@@ -9,7 +9,8 @@ function loadFilterData(data){
         var newCheck = document.createElement("input");
         newCheck.type="checkbox";
         newCheck.setAttribute("class", "subCatCheck");
-        newCheck.setAttribute("name", "subcategory-box");
+        newCheck.setAttribute("name", "subcategory-box[]");
+        newCheck.setAttribute("value", subCategories[i]);
 
 
         // Create list item label
@@ -37,7 +38,8 @@ function loadSizes(data){
         var newCheck = document.createElement("input");
         newCheck.type="checkbox";
         newCheck.setAttribute("class", "sizeCheck");
-        newCheck.setAttribute("name", "size-box");
+        newCheck.setAttribute("name", "size-box[]");
+        newCheck.setAttribute("value", sizes[i]);
 
 
         // Create list item label

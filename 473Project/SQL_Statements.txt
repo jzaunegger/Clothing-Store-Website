@@ -14,6 +14,7 @@ CREATE TABLE users(
     timeAdded time(6),
     dateLastEdited date,
     timeLastEdited time(6),
+    isAdmin tinyint(1), 
     PRIMARY KEY(userID)
 )
 
@@ -29,6 +30,7 @@ CREATE TABLE userSecQuestions(
     timeAdded time(6),
     dateLastEdited date,
     timeLastEdited time(6),
+    questionsSet tinyint(1),
 
     userID int(10),
     FOREIGN KEY(userID)
@@ -93,11 +95,13 @@ CREATE TABLE products(
 // Create Shirt Size Table
 CREATE TABLE shirtSizes(
     productID int(10),
+    xsmallQty int(6),
     smallQty int(6), 
     mediumQty int(6),
     largeQty int(6),
     xlargeQty int(6),
     xxlargeQty int(6),
+    3xlQty int(6),
 
     FOREIGN KEY(productID)
     REFERENCES products(productID)

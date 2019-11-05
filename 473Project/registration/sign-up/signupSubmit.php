@@ -157,6 +157,29 @@
                             echo("<h1> Sorry but your account could not be created at this time. </h1>");
                         }
 
+                        $userID = "none";
+                        $sql2 = "SELECT userID, firstName, lastName FROM users WHERE username='$username' AND email='$emailAddress'";
+                        $data = $connection->query($sql2);
+
+
+                            //Parse Data
+                        if($data->num_rows > 0){
+                            while($data2 = $data->fetch_assoc()){
+                                $userID = $data2['userID'];
+                            }
+                        }
+
+                        $sql3 = "INSERT INTO usersecquestions (userID, questionsSet)
+                        VALUES(' $userID', '0')";
+
+                        if($connection -> query($sql3) === TRUE){
+                            echo("Please set your security questions.");
+                        }
+                        else{
+                            echo("User security error.");
+                            echo "Error: " . $sql3 . "<br>" . $connection->error;
+                        }
+
                         // Close the Connection
                         CloseConnection($connection);
                     }

@@ -95,13 +95,12 @@
                             your account, you should try logging in first. 
                           </p>
                           
-                          <img src='/473Project/assets/images/not-today.jpg' class='meme'>
-                          
+                          <img src='/473Project/assets/images/not-today.jpg' class='meme'>  
                           ");
                         
-                          echo("</div>");
+                    echo("</div>");
 
-                        echo('<div class="bottom-panel">
+                    echo('<div class="bottom-panel">
                                 <a href="/473Project/support-pages/About.php" >About Us</a>
                                 <a href="/473Project/support-pages/Careers.php">Careers</a>
                                 <a href="/473Project/support-pages/FAQ.php">FAQ</a>
@@ -112,104 +111,143 @@
                 }
             ?>
 
-            <h1 class="Page-Title">Welcome <?php echo($_SESSION["username"]);?></h1>
+            <h1 class="Page-Title">Security Questions Submission</h1>
             <hr> <br>
 
-            <div class="two-columns">
-                <div class="left-col">
-                    <h2>Account Information</h2>
-                    <?php 
-                    // Make SQL Query to pull user information
-                     $userID =  $_SESSION["userID"];
-                     $username = $_SESSION["username"];
+            <?php
+                $userID = $_SESSION['userID'];
+                $status = " ";
 
-                    // Include Connection File and Open a connection.
-                    $connectionFile = $_SERVER['DOCUMENT_ROOT'] . "/473Project/assets/other/MySQL_ConnectionFile.php";
-                    include $connectionFile;
-                    $connection = OpenConnection();
+                // Check if questions are set 
+                if(isset($_POST['question1'])){
+                    $question1 = $_POST['question1'];
+                }   
+                else{
+                    $question1 = "None";
+                }
 
-                    // If connection fails throw error.
-                    if(!$connection){
-                        echo ("<p>
-                                Sorry your account information could not be loaded at the moment. Sorry for the incovience, please check back later
-                                to see if things are working properly again.
-                              </p>");
-                    }
+                if(isset($_POST['question2'])){
+                    $question2 = $_POST['question2'];
+                }   
+                else{
+                    $question2 = "None";
+                }
 
-                    // Create and send query
-                    $sql = "SELECT firstName, lastName, email, phoneNumber, dateAdded FROM users where userID='$userID'";
-                    $result = $connection->query($sql);
+                if(isset($_POST['question3'])){
+                    $question3 = $_POST['question3'];
+                }   
+                else{
+                    $question3 = "None";
+                }
 
-                    // Parse Response
-                    if($result->num_rows >0){
-                        while($row = $result->fetch_assoc()){
-                            echo("<span> Username: " . $username . "</span> <br><br>");
-                            echo("<span> First Name: " . $row['firstName'] . "</span> <br><br>");
-                            echo("<span> Last Name: " . $row['lastName'] . "</span> <br><br>");
-                            echo("<span> Email: " . $row['email'] . "</span> <br><br>");
-                            echo("<span> Phone Number: " . $row['phoneNumber'] . "</span> <br><br>");
-                            echo("<span> Date Joined: " . $row['dateAdded'] . "</span> <br><br>");
-                        }
-                    }
+                // Check if answers are set
+                if($_POST['answer1'] != ""){
+                    $answer1 = $_POST['answer1'];
+                }
+                else{
+                    $answer1 = "None";
+                }
 
-                    //Close the connection.
-                    CloseConnection($connection);
-                ?>
-                </div>
+                if($_POST['answer2'] != ""){
+                    $answer2 = $_POST['answer2'];
+                }
+                else{
+                    $answer2 = "None";
+                }
 
-                <div class="right-col">
-                    <h2>Account Security</h2>
-                        <!-- Signout of the Website -->
-                        <form action="signout.php" method="POST">
-                            <input type="submit" class="secBTN" name="signoutBtn" value="Sign Out">
-                        </form>
-                        <br>
+                if($_POST['answer3'] != ""){
+                    $answer3 = $_POST['answer3'];
+                }
+                else{
+                    $answer3 = "None";
+                }
 
-                        <!-- Set Security Questions -->
-                        <form action="updateSecurity.php" method="POST">
-                            <input type="submit" class="secBTN" name="signoutBtn" value="Update Security Questions">
-                        </form>
-                        <br>
+                $date = date("Y/m/d");
+                $time = date("h:i:s");
 
-                        <!-- Change your password -->
-                        <form action="updatePassword.php" method="POST">
-                            <input type="submit" class="secBTN" name="signoutBtn" value="Change Your Password">
-                        </form>
-                        <br>
+                // Submit data to DB
+                // Include Connection File and Open a connection.
+                $connectionFile = $_SERVER['DOCUMENT_ROOT'] . "/473Project/assets/other/MySQL_ConnectionFile.php";
+                include $connectionFile;
+                $connection = OpenConnection();
 
-                        <!-- Check if user is admin -->
-                        <?php
-                            $isAdmin = $_SESSION['isAdmin'];
+                // If connection fails throw error.
+                if(!$connection){
+                    echo "Connection failed: " . mysqli_connect_error();
+                }
 
-                            if($isAdmin == 0){
-                                echo("<button class='secBTN' onclick='window.location.href=`/473Project/admin-files/admin-page/admin.php`'>View Admin Tools</button>");
-                            }
-                        
-                        ?>
+                $checkQuestions = "SELECT questionsSet, question1 FROM usersecquestions WHERE userID='$userID'";
+                $response = $connection->query($checkQuestions);
 
-                        
-                </div>
-            </div>                
-
-            <h2>Order History</h2>
-                <p>
-                    Sorry but there is currently nothing here. When the cart system is up and running we will make this work.
-                </p>
-                <br><br>
+                if($response->num_rows > 0){
+                    while($response2 = $response->fetch_assoc()){
+                        $isSet= $response2['questionsSet'];
             
-            <h2>Products You Like</h2>
-                <p>
-                    Sorry but there is currently nothing here. When the like system is up and running we will make this work.
-                </p>
-                <br><br>
+                        if($isSet == 0){
+                            $status = "new";
+                        }
 
-    
-            <h2>Your Wishlist</h2>
-                <p>
-                    Sorry but there is currently nothing here. When the wish list is up and running we will make this work.
-                </p>
-                <br><br>
+                        if($isSet == 1){
+                            $status = "update";
+                        }
+     
+                    }
+                }
                 
+
+                if($status == "new"){
+                    $sql2 = "UPDATE usersecquestions SET question1='$question1', question2='$question2', question3='$question3', 
+                            answer1='$answer1', answer2='$answer2', answer3='$answer3', 
+                            dateAdded='$date', timeAdded='$time', dateLastEdited='$date', timeLastEdited='$time', questionsSet='1'
+                            WHERE userID='$userID'";
+                    $data2 = $connection->query($sql2);
+
+                    if($connection -> query($sql2) === FALSE){
+                        echo "Error: " . $sql2 . "<br>" . $connection->error;
+                    } 
+                    else{
+                        echo("Questions successfully created.");
+                    }
+                }
+
+                if($status == "update"){   
+                    $sql3 = "UPDATE usersecquestions SET question1='$question1',  question2='$question2', question3='$question3', 
+                            answer1='$answer1', answer2='$answer2', answer3='$answer3', dateLastEdited='$date', timeLastEdited='$time'
+                            WHERE userID='$userID'";
+
+                    $data3 = $connection->query($sql3);
+
+                    if($connection -> query($sql3) === FALSE){
+                            echo "Error: " . $sql3 . "<br>" . $connection->error;
+                    } 
+                    else{
+                        echo("Questions successfully updated.");
+                    }
+
+                }
+
+                //Close the connection.
+                CloseConnection($connection);
+
+                echo("
+                    <div class='sec-questions-post-box'>
+                       <br><br>
+
+                        Question 1: " . $question1 . " <br><br>
+                        Answer 1: " . $answer1 . " <br><br><br>
+
+                        Question 2: " . $question2 . " <br><br>
+                        Answer 2: " .$answer2 . " <br><br><br>
+
+                        Question 3: " . $question3 . " <br><br>
+                        Answer 3: " . $answer3 . " <br><br><br>
+
+                        <div class='return-to-profile-btn'>
+                            <input type='button' value='Return to Profile' onclick='returnToProfile();S'>
+                        </div>
+                    </div>
+                ");
+            ?>
         </div>
 
         <!------------------------------------------------- Bottom Panel ------------------------------------------------->
@@ -219,5 +257,7 @@
             <a href="/473Project/support-pages/FAQ.php">FAQ</a>
             <a href="/473Project/support-pages/CustomerSupport.php">Customer Support</a>
         </div>
+
+        <script src="/473Project/registration/account/updateSecurityQuestions.js"></script>
     </body>
 </html>
