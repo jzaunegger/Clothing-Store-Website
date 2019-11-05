@@ -10,6 +10,12 @@ function addAnotherProduct(){
     window.location.href = "/473Project/admin-files/products/add-product/AddProduct.html"
 }
 
+// Return to the Add Product Form
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function editdAnotherProduct(){
+    window.location.href = "/473Project/admin-files/products/edit-product/EditProduct.html"
+}
+
 // Return to the Delete Product Form
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function deleteAnotherProduct(){

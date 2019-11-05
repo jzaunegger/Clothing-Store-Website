@@ -228,7 +228,7 @@
         <br><br>
 
         <button onclick="returnToAdmin();" class="submitButton">Done</button>
-        <button onclick="addAnotherProduct();" class="submitButton">Add Another Product</button>
+        <button onclick="editAnotherProduct();" class="submitButton">Edit Another Product</button>
     </div>
     
     <script src="/473Project/admin-files/products/productLinks.js"></script>

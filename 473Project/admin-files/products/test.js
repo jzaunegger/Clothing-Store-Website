@@ -267,7 +267,6 @@ function validateForm(data){
         }
     }
 
-    // Check Image Paths
 }
 
 // Retrieve the JSON file and update the page
