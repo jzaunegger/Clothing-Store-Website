@@ -1,0 +1,99 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgba(1, 1, 1, 0.8);
+}
+
+/* CSS for the form section*/
+.formBlock{
+    background-color: lightgray;
+    border-radius: 15px;
+    padding: 3%;
+    width: 50%;
+
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+textarea{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* CSS for the close button*/
+.closeButton{
+    float: right;
+    font-size: 16pt;
+    color: black;
+}
+
+.closeButton:hover{
+    color: gray;
+    cursor: pointer;
+}
+
+/* CSS for Input Items*/
+.formBlockElement{
+    border: 2px solid black;
+    padding: 5px;
+    resize: none;
+}
+.sizeList{
+    display: inline-block;
+}
+
+.sizeItem{
+    list-style-type:none;
+    float: left;
+    text-align: left;
+    margin-right: 10px;
+}
+
+.sizeInput{
+    float: right;
+}
+/* CSS for the Submit Button */
+.submitButton{
+    padding: 10px;
+    border: 2px solid black;
+    color: black;
+}
+
+.submitButton:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* CSS for the two column layout*/
+.base{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.col{
+    flex: 50%;
+    padding: 3%;
+}
+
+/* CSS for Search Product Table */
+.searchProductTable{
+    width: 100%;
+}
+
+.searchProductTable td{
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.searchProductTable td:nth-child(1){
+    background-color: transparent;
+    border: none;
+    text-align: center;
+}

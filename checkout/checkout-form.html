@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Check Out</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="checkout.css">
+    <script src="https://kit.fontawesome.com/767c462c99.js"></script>
+    <meta name="robots" content="noindex,follow" />
+</head>
+
+<body>
+    <!--<form id="checkoutForm" action="/checkout.php"></form>-->
+    <div class="checkout-panel">
+        <div class="panel-body">
+            <!-----------------------------------------Delivery Tab------------------------------------------------>
+            <div class="tab">
+                <h2 class="title">Shipping Information</h2>
+                <div class="input-fields">
+                    <div class="column-1">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" size="30" />
+
+                        <label for="address1">Address</label>
+                        <input type="text" name="address1" id="address1" size="30" placeholder="Adderss 1" />
+                        <br />
+                        <input type="text" name="address1" id="address2" size="30" placeholder="Address 2" />
+
+                        <label for="city">City</label>
+                        <input type="text" name="city" id="city" size="30" />
+
+                        <div class="small-inputs">
+                            <div>
+                                <label for="state">State</label>
+                                <input type="text" name="state" id="state" size="20" />
+                            </div>
+
+                            <div>
+                                <label for="zip">Zip Code</label>
+                                <input type="text" name="zip-code" id="zip-code" size="5" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column-2">
+                        <label for="phone">Phone</label>
+                        <input type="text" name="phone" id="phone" size="12" />
+
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email" size="30" />
+                    </div>
+                </div>
+            </div>
+            <!-----------------------------------------Payment Tab--------------------------------------------->
+            <div class="tab">
+                <h2 class="title">Payment</h2>
+
+                <div class="payment-method">
+                    <label for="card" class="method card">
+                        <div class="card-logos">
+                            <i class="fab fa-cc-visa" style="color:navy;"></i>
+                            <i class="fab fa-cc-amex" style="color:blue;"></i>
+                            <i class="fab fa-cc-mastercard" style="color:red;"></i>
+                            <i class="fab fa-cc-discover" style="color:orange;"></i>
+                        </div>
+
+                        <div class="radio-input">
+                            <input id="card" type="radio" name="payment">
+                        </div>
+                    </label>
+
+                    <label for="paypal" class="method paypal">
+                        <div class="card-logos">
+                            <i class="fab fa-cc-paypal" style="color:blue;"></i>
+                        </div>
+                        <div class="radio-input">
+                            <input id="paypal" type="radio" name="payment">
+                        </div>
+                    </label>
+                </div>
+
+                <div class="input-fields">
+                    <div class="column-1">
+                        <label for="cardholder">Cardholder's Name</label>
+                        <input type="text" />
+                        <i class="fas fa-user" aria-hidden="true"></i>
+
+                        <div class="small-inputs">
+                            <div>
+                                <label for="date">Valid thru</label>
+                                <input type="text" placeholder="MM / YY" />
+                                <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                            </div>
+
+                            <div>
+                                <label for="verification">CVV / CVC *</label>
+                                <input type="password" />
+                                <i class="fas fa-lock" aria-hidden="true"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="column-2">
+                        <label for="cardnumber">Card Number</label>
+                        <input type="password" />
+                        <i class="far fa-credit-card" aria-hidden="true"></i>
+
+                        <span class="info">* CVV or CVC is the card security code, unique three digits number on the
+                            back of your card separate from its number.</span>
+                    </div>
+                </div>
+            </div>
+            <!---------------------------------------Confirmation Tab----------------------------------------->
+            <div class="tab">
+                <h2 class="title">Confirmation</h2>
+                <!--Posts from PHP?-->
+                <div class="column-1">
+                </div>
+            </div>
+            <!-----------------------------------------Finish Tab------------------------------------------>
+            <div class="tab">
+                <h2 class="title">Finish</h2>
+                <!--Summary of entire purchase-->
+            </div>
+        </div>
+
+        <div class="panel-footer">
+            <button class="btn back-btn" id="prevBtn">Back</button>
+            <button class="btn next-btn" id="nextBtn">Next Step</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="checkout.js"></script>
+</body>
+
+</html>
