@@ -95,7 +95,7 @@
                             your account, you should try logging in first. 
                           </p>
                           
-                          <img src='/473Project/assets/images/not-today.jpg' class='meme'>
+                          <img src='/473Project/assets/images/support/not-today.jpg' class='meme'>
                           
                           ");
                         

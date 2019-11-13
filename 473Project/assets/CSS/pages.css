@@ -13,6 +13,12 @@
 
 .image-slide{
     display: none;
+    background-color: lightgray;
+}
+
+.slideshow-image{
+    width: 20%;
+    height: 20%;
 }
 
 img{
@@ -25,34 +31,31 @@ img{
     background-color: #333;
     font-size: 16px;
     padding: 8px 12px;
-    position: absolute;
-    top: 0;
-    right: 0;
+    text-align: right;
 }
 
 .prev, .next {
     cursor: pointer;
     background-color: rgba(51, 51, 51, 0.75);
     position: absolute;
-    top: 50%;
+    top: 55%;
     width: auto;
     padding: 16px;
     margin-top: -22px;
     color: white;
     font-weight: bold;
     font-size: 18px;
-    transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
 }
 
 .next {
-    right: 0;
+    right: 10%;
     border-radius: 3px 0 0 3px;
 }
 
 .prev:hover, .next:hover {
-    background-color: #333;
+    background-color: rgb(0, 173, 173);;
 }
 
 .product-grid-header{
@@ -111,134 +114,15 @@ img{
 }
 
 .product-name{
-    font-size: 12pt;
+    font-size: 10pt;
     padding: 10px;
 }
-
-.product-price{
-    font-size: 14pt;
-    padding: 10px;
-}
-
-
-
-/*************************************** CSS for the Product Grid Pages ********************************************/
-.product-page{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: center;
-
-    margin-bottom: 3%;
-}
-
-.filter-box{
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    flex: 20%;
-    max-height: 70vh;
-}
-
-#filterSelectBox{
-    border: none;
-    background-color: lightgray;
-    color: black;
-    padding: 2px;
-}
-
-.subCatCheck, .sizeCheck{
-    float: left;
-    padding: 15px;
-    display: block;
-    font-size: 16pt;
-    border: none;
-}
-
-.subCatLabel, .sizeLabel{
-    font-size: 12pt;
-}
-
-.filter-heading{
-    text-decoration: underline;
-}
-
-.filter-button{
-    float: right;
-    border: none;
-    border-radius: 5px;
-    background-color: transparent;
-    color: white;
-    background-color: gray;
-    padding: 5px;
-    margin: 1%;
-}
-
-.filter-button:hover{
-    cursor: pointer;
-    color: black;
-    background-color: white;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-/*************************************** Product CSS ***************************************/
-.no-results-box{
-    min-height: 70vh;
-}
-
-.products-container{
-    width: 80%;
-    padding-left: 15px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.filter-name{
-    min-width: 70%;
-    width: 70%;
-    text-align: left;
-    background-color: #333;
-    color: white;
-    padding: 20px;
-}
-
-.numProductResults{
-    width: 20%;
-    text-align: right;
-    background-color: #333;
-    color: white;
-    padding: 20px;
-}
-
-.product{
-    margin: 1%;
-    background-color: #333;
-    color: white;
-    width: 22%;
-}
-
-.product:hover{
-    cursor: pointer;
-    background-color: black;
-    box-shadow:  5px 5px 5px 5px #bbb;
-}
-
-.product-details{
-    padding: 5px;
-}
-
 
 .product-price{
     font-size: 10pt;
+    padding: 10px;
 }
 
-.product img{
-    width: 100%;
-}
 
 /*************************************** CSS for Popup Modal ***************************************/
 .popup-container-bg{
@@ -306,7 +190,6 @@ img{
 
 .detail{
     font-weight: bold;
-    text-decoration: underline;
 }
 
 .detail-sizebox{
@@ -324,7 +207,13 @@ img{
 
 .popup-buttons{
     background-color: #333;
+    color: lightgray;
     padding: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .popup-button{
@@ -334,23 +223,7 @@ img{
     padding: 15px;
 }
 
-#likeProduct:hover{
-    background-color: rgb(211, 32, 32);
-    color: white;
-    cursor: pointer;
-}
-
-#addToWishlist:hover{
-    background-color: rgb(0, 149, 235);
-    color: white;
-    cursor: pointer;
-}
-
-#addToCart{
-    float: right;
-}
-
-#addToCart:hover{
+.popup-button:hover{
     background-color: white;
     cursor: pointer;
 }
@@ -392,7 +265,7 @@ img{
     position: absolute;
     left: 70px;
     top: 300px;
-    width: 700px;
+    width: 40%;
 }
 
 .error-container .HomeBTN{

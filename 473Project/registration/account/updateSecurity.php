@@ -95,7 +95,7 @@
                             your account, you should try logging in first. 
                           </p>
                           
-                          <img src='/473Project/assets/images/not-today.jpg' class='meme'>  
+                          <img src='/473Project/assets/images/support/not-today.jpg' class='meme'>
                           ");
                         
                     echo("</div>");
@@ -159,7 +159,7 @@
                          </form>
 
                          <div class='sec-questions-image-container'>
-                            <img src='/473Project/assets/images/parkour.jpg' class='sec-questions-image'>
+                            <img src='/473Project/assets/images/support/parkour.jpg' class='sec-questions-image'>
                         </div>
                     </div>
                     ");

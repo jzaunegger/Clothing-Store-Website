@@ -93,7 +93,7 @@
             <h1 class="Page-Title">Men's Clothing</h1>
             <hr>
             
-            <h2>Featured Items</h2>
+            <h2>Featured Products</h2>
 
             <?php
                 // Initalize Variables
@@ -192,46 +192,58 @@
                     function sortHighestPrice($object1, $object2){
                         return $object1->price < $object2->price;
                     }
+
+
+                    // Display the 10 random items in the slideshow
+                    echo("<div class='slideshow-contianer'>");
+
+                    $rand_keys = array_rand($products, 10);
+
+                    for($z=0; $z<10; $z++){
+
+                        $randIndex = $rand_keys[$z];
+                        if($randIndex == 74){
+                            $randIndex = 75;
+                        }
+                        $randID = $products[$randIndex]->id;
+                     
+                        $imgNum = $z+1;
+
+                        echo("<div class='image-slide new-arrivals'>");
+                            echo("<div class='image-number'>" . $imgNum . " / 10 </div>");
+
+                            // Retrieve image for the current product
+                            $imgSql = "SELECT imageLink1, imageLink2, imageLink3, imageLink4, imageLink5 FROM images WHERE productID='$randID'";
+                            $randImageData = $connection->query($imgSql);
+
+                            // Check if query failed, if so throw error
+                            if($randImageData == null){
+                                echo "Error: " . $sql  . "<br>" . $connection->error;
+                            }
+
+                            if($randImageData->num_rows > 0){
+                                while($randImageData2 = $randImageData->fetch_assoc()){
+                                    $imagePath1 = $randImageData2['imageLink1'];
+                                    $imagePath2 = $randImageData2['imageLink2'];
+                                    $imagePath3 = $randImageData2['imageLink3'];
+                                    $imagePath4 = $randImageData2['imageLink4'];
+                                    $imagePath5 = $randImageData2['imageLink5'];
+
+                                    echo("<img class='slideshow-image' src='$imagePath1'>");
+                                    echo("<img class='slideshow-image' src='$imagePath2'>");
+                                    echo("<img class='slideshow-image' src='$imagePath3'>");
+                                    echo("<img class='slideshow-image' src='$imagePath4'>");
+                                    echo("<img class='slideshow-image' src='$imagePath5'>");
+                                }
+                            }
+
+                        echo("</div>");
+                    }
+                echo("<a class='prev' onclick='plusSlidesNA(-1)'>&#10094;</a>"); 
+                echo("<a class='next' onclick='plusSlidesNA(1)'>&#10095;</a>"); 
+                echo("</div>");
                 
             ?>
-
-            <!-- HTML for the New Arrivals Slideshow -->
-            <div class="slideshow-container">
-                <div class="image-slide new-arrivals">
-                    <div class="image-number">1 / 6</div>
-                    <img src="/473Project/assets/images/index/dancer2.jpg">
-                </div>
-
-                <div class="image-slide new-arrivals">
-                    <div class="image-number">2 / 6</div>
-                    <img src="/473Project/assets/images/index/man-standing.jpg">
-                </div>
-
-                <div class="image-slide new-arrivals">
-                    <div class="image-number">3 / 6</div>
-                    <img src="/473Project/assets/images/index/unisex.jpg">
-                </div>
-
-                <div class="image-slide new-arrivals">
-                    <div class="image-number">4 / 6</div>
-                    <img src="/473Project/assets/images/index/woman-front.jpg">
-                </div>
-
-                <div class="image-slide new-arrivals">
-                    <div class="image-number">5 / 6</div>
-                    <img src="/473Project/assets/images/index/clothing-shelf.jpg">
-                </div>
-
-                <div class="image-slide new-arrivals">
-                    <div class="image-number">6 / 6</div>
-                    <img src="/473Project/assets/images/man-laying.jpg">
-                </div>
-
-                <a class="prev" onclick="plusSlidesNA(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlidesNA(1)">&#10095;</a>
-            </div>
-            <br>
-
             <br>
             <h2>All Mens Clothes</h2>
 
@@ -292,7 +304,7 @@
                 <?php 
                     // Iterate through the products
                     for($i=0; $i<$counter; $i++){
-                        echo("<div class='product-container'>");
+                        echo("<div class='product-container' onclick='showPopup(" . $products[$i]->id . ")'>");
                         $currentID = $products[$i]->id;
 
                         // Load the Images
@@ -335,10 +347,7 @@
                             elseif($imagePath6 != null){
                                 echo("<img src='" . $imagePath6 . "'>");
                             }
-                            else{
-                                // Echo Image not found if the image could not be loaded.
-                                echo("img src='/473Project/assets/images/ImageNotFound.jpg'>");
-                            }
+                            
                             // Display the product details
                             echo("<span class='product-name'>");
                             $products[$i]->showProductName();
@@ -358,6 +367,59 @@
 
         </div>
 
+         <!-- HTML for the Popup Modal to view products -->
+         <div class="popup-container-bg" id="popup-container-bg">
+            <div class="popup-container">
+                <div class="popup-header">
+                    <span class="popup-product-name" id="popup-product-name"></span>
+                    <span class="popup-close-button" id="popup-close-button" onclick="closePopup();"> <i class="fas fa-times"></i> </span>
+                </div>
+
+                <div class="popup-images">
+                    <img class="popup-image" id="image1" src="">
+                    <img class="popup-image" id="image2" src="">
+                    <img class="popup-image" id="image3" src="">
+                    <img class="popup-image" id="image4" src="">
+                    <img class="popup-image" id="image5" src="">
+                    <img class="popup-image" id="image6" src="">
+                </div>
+
+                <div class="popup-details">
+                    <div class="popup-details-left">
+                        <label class="detail">Product Description:</label><br>
+                         <label id="productDescription"></label> <br><br>
+
+                        <label class="detail">Sex:</label><br>                  
+                        <label id="productSex"></label> <br><br>
+
+                        <label class="detail">Category:</label><br>             
+                        <label id="productCategory"></label> <br><br>
+                    </div>
+
+                    <div class="popup-details-right">
+                        <label class="detail">Price</label><br>                 
+                        <label id="productPrice"></label> <br><br>
+
+                        <label class="detail">Quantity </label><br>         
+                        <label id="quantity"></label>
+
+                        <input type="number" id="quantityInput" min="0" step="1" max="100" placeholder="0" class="popup-input"><br><br>
+
+                        <label class="detail">Size </label><br>
+                        <select class="detail-sizebox" id="detailSizebox">
+                            
+                        </select> 
+                    </div>
+                </div>
+
+                <div class="popup-buttons">
+                    <span class="item-number" id="itemNumber">Item Number: #</span>
+                    <span id="errorBox"></span>
+                    <button class="popup-button" id="addToCart">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+
          <!------------------------------------------------- Bottom Panel ------------------------------------------------->
         <div class="bottom-panel">
             <a href="/473Project/support-pages/About.php">About Us</a>
@@ -365,7 +427,9 @@
             <a href="/473Project/support-pages/FAQ.php">FAQ</a>
             <a href="/473Project/support-pages/CustomerSupport.php">Customer Support</a>
         </div>
-        
+
         <script src="Mens.js"></script>
+        <script src="/473Project/website-files/popup.js"></script>
+        <script src="/473Project/website-files/addToCart.js"></script>
     </body>
 </html>

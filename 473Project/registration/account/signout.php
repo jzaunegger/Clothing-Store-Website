@@ -95,7 +95,10 @@
                           <p> 
                             Good attempt, but you should not be able to see anything on this page because you are not signed in. If you would like to access 
                             your account, you should try logging in first. 
-                          </p>");
+                          </p>
+                          
+                          <img src='/473Project/assets/images/support/not-today.jpg' class='meme'>
+                          ");
                         
                           echo("</div>");
 
