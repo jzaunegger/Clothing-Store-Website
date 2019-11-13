@@ -1,0 +1,578 @@
+.Page-Content{
+    width: 80%;
+    margin-left: 10%;
+    min-height: 100vh;
+}
+
+/*************************************** CSS for the Slideshow page ***************************************/
+.slideshow-container{
+    width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.image-slide{
+    display: none;
+}
+
+img{
+    vertical-align: middle;
+    width: 100%;
+}
+
+.image-number{
+    color: #f2f2f2;
+    background-color: #333;
+    font-size: 16px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.prev, .next {
+    cursor: pointer;
+    background-color: rgba(51, 51, 51, 0.75);
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: #333;
+}
+
+.product-grid-header{
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+#result-count{
+    float: left;
+}
+
+#sort-box{
+    float: right;
+}
+
+.sort-button{
+    background-color: white;
+    color: #333;
+    font-size: 12pt;
+    border: none;
+}
+
+.sort-button:hover{
+    background-color: rgb(0, 173, 173);
+    color: white;
+    cursor: pointer;
+}
+
+.gender-homepage-product-grid{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.product-container{
+    max-width: 18%;
+    height: 36%;
+    background-color: #333;
+    color: white;
+    margin: 1%;
+}
+
+.product-container:hover{
+    background-color: rgb(0, 173, 173);
+    cursor: pointer;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.product-name{
+    font-size: 12pt;
+    padding: 10px;
+}
+
+.product-price{
+    font-size: 14pt;
+    padding: 10px;
+}
+
+
+
+/*************************************** CSS for the Product Grid Pages ********************************************/
+.product-page{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+
+    margin-bottom: 3%;
+}
+
+.filter-box{
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    flex: 20%;
+    max-height: 70vh;
+}
+
+#filterSelectBox{
+    border: none;
+    background-color: lightgray;
+    color: black;
+    padding: 2px;
+}
+
+.subCatCheck, .sizeCheck{
+    float: left;
+    padding: 15px;
+    display: block;
+    font-size: 16pt;
+    border: none;
+}
+
+.subCatLabel, .sizeLabel{
+    font-size: 12pt;
+}
+
+.filter-heading{
+    text-decoration: underline;
+}
+
+.filter-button{
+    float: right;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    background-color: gray;
+    padding: 5px;
+    margin: 1%;
+}
+
+.filter-button:hover{
+    cursor: pointer;
+    color: black;
+    background-color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/*************************************** Product CSS ***************************************/
+.no-results-box{
+    min-height: 70vh;
+}
+
+.products-container{
+    width: 80%;
+    padding-left: 15px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-name{
+    min-width: 70%;
+    width: 70%;
+    text-align: left;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+.numProductResults{
+    width: 20%;
+    text-align: right;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+.product{
+    margin: 1%;
+    background-color: #333;
+    color: white;
+    width: 22%;
+}
+
+.product:hover{
+    cursor: pointer;
+    background-color: black;
+    box-shadow:  5px 5px 5px 5px #bbb;
+}
+
+.product-details{
+    padding: 5px;
+}
+
+
+.product-price{
+    font-size: 10pt;
+}
+
+.product img{
+    width: 100%;
+}
+
+/*************************************** CSS for Popup Modal ***************************************/
+.popup-container-bg{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    visibility: hidden;
+}
+
+.popup-container{
+    background-color: white;
+    width: 80%;
+    margin: auto;
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.popup-header{
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+.popup-product-name{
+    font-size: 16pt;
+}
+
+.popup-close-button i{
+    float: right;
+    font-size: 16pt;
+}
+
+.popup-close-button:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.popup-images{
+    background-color: black;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-image{
+    width: 33%;
+    height: 66%;
+}
+
+.popup-details{
+    background-color: white;
+    color: black;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.detail{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.detail-sizebox{
+    border: none;
+}
+
+.popup-details-left{
+    width: 75%;
+}
+
+.popup-details-right{
+    margin-left: 5%;
+    width: 25%;
+}
+
+.popup-buttons{
+    background-color: #333;
+    padding: 20px;
+}
+
+.popup-button{
+    border: none;
+    color: black;
+    background-color: lightgray;
+    padding: 15px;
+}
+
+#likeProduct:hover{
+    background-color: rgb(211, 32, 32);
+    color: white;
+    cursor: pointer;
+}
+
+#addToWishlist:hover{
+    background-color: rgb(0, 149, 235);
+    color: white;
+    cursor: pointer;
+}
+
+#addToCart{
+    float: right;
+}
+
+#addToCart:hover{
+    background-color: white;
+    cursor: pointer;
+}
+
+/*************************************** CSS for the 404 Page ***************************************/
+.error-container{
+    margin-top: 1%;
+    margin-bottom: 2%;
+    padding: 15px;
+    overflow: hidden;
+
+    
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.error-container img{
+    object-fit: contain;
+}
+
+.error-container .header{
+    position: absolute;
+    left: 70px;
+    top: -50px;
+
+    font-size: 100pt;
+}
+
+.error-container .header2{
+    position: absolute;
+    left: 70px;
+    top: 150px;
+
+    font-size: 50pt;
+}
+
+.error-container .message{
+    position: absolute;
+    left: 70px;
+    top: 300px;
+    width: 700px;
+}
+
+.error-container .HomeBTN{
+    position: absolute;
+    left: 70px;
+    top: 675px;
+
+    border:none;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    padding: 15px 30px 15px 30px;
+}
+
+.error-container .HomeBTN:hover{
+    cursor: pointer;
+    background-color: gray;
+}
+
+/*************************************** CSS for the About Page ***************************************/
+.founder-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.founder{
+    background-color: #333;
+    color: white;
+    margin-right: 1%;
+    padding: 1%;
+}
+
+.founder h3{
+    text-align: center;
+}
+
+.founder img{
+    width: 100%;
+    border-radius: 5%;
+}
+
+/*************************************** CSS for the Customer Support Page ***************************************/
+.emailForm, .returnForm{
+    background-color: #333;
+    padding: 25px;
+    color: white;
+    border-radius: 20px;
+}
+
+.emailInputItem, .returnInputItem{
+    border: none;
+    color: lightgray;
+    background-color: transparent;
+}
+
+.emailInputItem:hover, .returnInputItem:hover{
+    cursor: pointer;
+}
+
+.emailTextArea, .returnTextArea{
+    background-color: lightgray;
+    width:  calc(100% - 20px);      /* calc and viewport to the rescue */
+    height: 250px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    resize: none;
+}
+
+.emailSendBTN{
+    float: right;
+    border: none;
+    padding: 7px;
+    background-color: lightgray;
+}
+
+.emailSendBTN:hover{
+    background-color: white;
+    cursor: pointer;
+}
+
+/*************************************** Account Page ***************************************/
+.two-columns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.left-col{
+    width: 50%;
+}
+
+.left-col span{
+    font-size: 14pt;
+}
+
+.right-col{
+    width: 50%;
+}
+
+.secBTN{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    background-color: #333;
+    color: white;
+}
+
+.secBTN:hover{
+    cursor: pointer;
+    color: lightgray;
+}
+
+.meme{
+    width: 60%;
+    margin-left: 20%;
+}
+
+/***** CSS for Security Questions *****/
+.sec-questions-two-col{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+.security-questions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    margin: auto;
+}
+
+.security-question{
+    padding: 10px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+
+.question-select{
+    border: none;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+}
+
+.question-answer{
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+.question-select:hover, .question-answer:hover{
+    border-bottom: 2px solid gray;
+    cursor: pointer;
+}
+
+.update-sec-questions-btn{
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    border: none;
+}
+
+.update-sec-questions-btn:hover{
+    cursor: pointer;
+    background-color: black;
+}
+
+.sec-questions-image-container{
+    width: 60%;
+    margin: auto;
+    background-color: #333;
+}
+
+.sec-questions-image{
+    padding: 2.5%;
+    width: 95%;
+}
