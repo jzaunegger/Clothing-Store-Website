@@ -127,6 +127,32 @@
                         // Load products from the database.
                         ///////////////////////////////////////////////
 
+                        // Create Class for Product
+                        class Product{
+                            public function __construct($productID, $productName, $productPrice){
+                                $this->id = $productID;
+                                $this->name = $productName;
+                                $this->price = $productPrice;
+                            }
+
+                            // Echo out the productID
+                            public function showProductID(){
+                                echo($this->id);
+                            }
+
+                            // Echo out the productName
+                            public function showProductName(){
+                                echo($this->name);
+                            }
+
+                            // Echo out the productPrice
+                            public function showProductPrice(){
+                                echo($this->price);
+                            }
+                        }
+
+
+
                         // Initalize Variables
                         $search_sex = "Male";
                         $search_category = "Tops";
@@ -139,9 +165,12 @@
                         $names = [];
                         $prices = [];
 
+                        $products = [];
+
                         // Pull variables from Product Filter Form
-                        if (isset($_GET['filter-select-box'])) {
+                        if(isset($_GET['filter-select-box'])) {
                             $filterBox = $_GET['filter-select-box'];
+                            
                         }
 
                         if(isset($_GET['subcategory-box'])){
@@ -224,6 +253,9 @@
                         // Parse data from query response
                         if($data->num_rows > 0){
                             while($data2 = $data->fetch_assoc()){
+                                $products[$counter] = new Product($data2['productID'], $data2['productName'], $data2['price']);
+                                
+
                                 $ids[$counter] = $data2['productID'];
                                 $names[$counter] = $data2['productName'];
                                 $prices[$counter] = $data2['price'];
@@ -231,6 +263,9 @@
                                 $counter = $counter + 1;
                             }
                         }
+
+                        // Restructure productID's to reorganize the data by the filter
+
 
                         // Echo product data onto page
                         if(isset($filterBox)){
@@ -318,11 +353,13 @@
 
                             echo("' onclick='showPopup( ". $ids[$i] . " );'>
                                 <div class='product-details'>
-                                    <label class='product-name'>". $names[$i] ."</label> <br>
+                                    <label class='product-name'>". $names[$i]."</label> <br>
                                     <label class='product-price'>$". number_format($prices[$i], 2) ."</label> <br>
                                 </div>
                             </div>
                         ");
+                                
+                        //$ids[$i] $names[$i] number_format($prices[$i], 2)
                         }
 
                         //Close the connection.
