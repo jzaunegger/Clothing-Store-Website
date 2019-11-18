@@ -166,34 +166,6 @@
                         $counter = $counter + 1;
                     }
                 }
-
-                // Create functions for filtering options
-                    // New Arrivals 
-                    function sortNewArrivals($object1, $object2){
-                        return $object1->dateAdded < $object2->dateAdded;
-                    }
-
-                    // A to Z
-                    function sortATOZ($object1, $object2){
-                        return $object1->name > $object2->name;
-                    }
-
-                    // Z to A
-                    function sortZTOA($object1, $object2){
-                        return $object1->name < $object2->name;
-                    }
-
-                    // Lowest Price
-                    function sortLowestPrice($object1, $object2){
-                        return $object1->price > $object2->price;
-                    }
-
-                    // Highest Price
-                    function sortHighestPrice($object1, $object2){
-                        return $object1->price < $object2->price;
-                    }
-
-
                     // Display the 10 random items in the slideshow
                     echo("<div class='slideshow-contianer'>");
 
@@ -256,32 +228,37 @@
 
                     // Sort By: New Arrivals
                     if($sortFlag == 1){
-                        echo("Sorting by New Arrivals");
+                        echo("Sorting by New Arrivals. <br>");
                         usort($products, 'sortNewArrivals');
+                        echo("Showing " .$counter . " results...");
                     }
 
                     // Sort By: A to Z
                     if($sortFlag == 2){
-                        echo("Sorting products by name, A to Z");
+                        echo("Sorting products by name, A to Z. <br>");
                         usort($products, 'sortATOZ');
+                        echo("Showing " .$counter . " results...");
                     }
 
                     // Sort By: Z to A
                     if($sortFlag == 3){
-                        echo("Sorting products by name, Z to A");
+                        echo("Sorting products by name, Z to A. <br>");
                         usort($products, 'sortZTOA');
+                        echo("Showing " .$counter . " results...");
                     }
 
                     // Sort By: Lowest Price
                     if($sortFlag == 4){
-                        echo("Sorting by Lowest Price");
+                        echo("Sorting by Lowest Price. <br>");
                         usort($products, 'sortLowestPrice');
+                        echo("Showing " .$counter . " results...");
                     }
 
                     // Sort By: Highest Price
                     if($sortFlag == 5){
-                        echo("Sorting by Highest Price");
+                        echo("Sorting by Highest Price. <br>");
                         usort($products, 'sortHighestPrice');
+                        echo("Showing " .$counter . " results...");
                     }
                 ?>
 

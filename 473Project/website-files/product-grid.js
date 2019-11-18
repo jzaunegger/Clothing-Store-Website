@@ -1,3 +1,4 @@
+/*
 // Load the subcategories and sizes into the filter box.
 function loadFilterData(data){
     var subCategories = (data.categories.tops.subcategoryNames);
@@ -27,34 +28,6 @@ function loadFilterData(data){
     }
 }
 
-// Load the size chart into the filter box
-function loadSizes(data){
-    var sizes = data.categories.tops.sizeValues;
-    var subCatSizeList = document.getElementById("subcategory-sizes")
-
-    // Iterate through sizes
-    for(var i=0; i<sizes.length; i++){
-        // Create list item checkbox
-        var newCheck = document.createElement("input");
-        newCheck.type="checkbox";
-        newCheck.setAttribute("class", "sizeCheck");
-        newCheck.setAttribute("name", "size-box[]");
-        newCheck.setAttribute("value", sizes[i]);
-
-
-        // Create list item label
-        var newItem = document.createElement("li");
-        newItem.setAttribute("class", "sizeLabel");
-        newItem.innerHTML = sizes[i];
-
-        var lineBreak = document.createElement("br");
-
-        subCatSizeList.append(newCheck);
-        subCatSizeList.append(newItem);
-        subCatSizeList.append(lineBreak);
-    }
-}
-
 // Retrieve product data from JSON file.
 function loadJSON(){
     var xml = new XMLHttpRequest();
@@ -63,7 +36,6 @@ function loadJSON(){
             var data = JSON.parse(this.responseText);
 
             loadFilterData(data);
-            loadSizes(data);
         }
     }
 
@@ -72,3 +44,5 @@ function loadJSON(){
 }
 
 var jsonData = loadJSON();
+
+*/

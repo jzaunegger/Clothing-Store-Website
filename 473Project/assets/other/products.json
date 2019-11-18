@@ -1,8 +1,8 @@
 {
     "categories":{
         "tops":{
-            "subcategoryNames": ["Sweaters", "Sweatshirts", "Hoodies", "T-Shirts", "Long Sleeves", "Short Sleeve", "Tank Tops", "Jackets", "Coats", "Dress Shirts"],
-            "subcategoryValues":["sweater", "sweatshirt", "hoodie", "t-shirt", "long-sleeve", "short-sleeve", "tank-top", "jacket", "coat", "dress-shirts"],
+            "subcategoryNames": ["All", "Sweaters", "Sweatshirts", "Hoodies", "T-Shirts", "Long Sleeves", "Short Sleeve", "Tank Tops", "Jackets", "Coats", "Dress Shirts", "None"],
+            "subcategoryValues":["all", "sweater", "sweatshirt", "hoodie", "t-shirt", "long-sleeve", "short-sleeve", "tank-top", "jacket", "coat", "dress-shirts", "none"],
             "sizeNames": ["Extra Small", "Small", "Medium", "Large", "Extra Large", "Extra Exta Large", "Three Extra Large"],
             "sizeValues": ["XS", "S", "M", "L", "XL", "XXL", "3XL"],
             "sizeChart": "shirts"
