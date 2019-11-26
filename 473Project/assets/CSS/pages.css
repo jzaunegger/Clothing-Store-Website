@@ -55,7 +55,7 @@ img{
 }
 
 .prev:hover, .next:hover {
-    background-color: rgb(0, 173, 173);;
+    background-color: rgb(0, 173, 173);
 }
 
 .product-grid-header{
@@ -234,8 +234,6 @@ img{
     margin-bottom: 2%;
     padding: 15px;
     overflow: hidden;
-
-    
     position: relative;
     width: 100%;
     height: 100vh;
@@ -249,30 +247,27 @@ img{
     position: absolute;
     left: 70px;
     top: -50px;
-
-    font-size: 100pt;
+    font-size: 75pt;
 }
 
 .error-container .header2{
     position: absolute;
     left: 70px;
-    top: 150px;
-
-    font-size: 50pt;
+    top: 120px;
+    font-size: 30pt;
 }
 
 .error-container .message{
     position: absolute;
     left: 70px;
-    top: 300px;
-    width: 40%;
+    top: 200px;
+    width: 30%;
 }
 
 .error-container .HomeBTN{
     position: absolute;
     left: 70px;
-    top: 675px;
-
+    top: 450px;
     border:none;
     background-color: black;
     color: white;
@@ -449,3 +444,27 @@ img{
     padding: 2.5%;
     width: 95%;
 }
+
+/********************************* CSS for the Folder Crawl Page *************************************/
+
+.layer2{
+    margin-left: 2.5%;
+}
+
+.layer3{
+    margin-left: 5%;
+}
+
+.layer4{
+    margin-left: 7.5%;
+}
+
+.layer5{
+    margin-left: 10%;
+}
+
+.folder-label{
+    margin-left: 1%;
+}
+
+/** CSS for the images table on the image submission page **/

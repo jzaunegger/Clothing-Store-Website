@@ -58,34 +58,35 @@ li.dropdown {
   display: block;
 }
 
-#cartButton, #loginButton, #accountButton{
+#cartButton, #loginButton, #accountButton, #searchIconBlock, #searchBarBlock{
   float: right;
+}
+
+#searchBarBlock{
+  margin: 10px 10px 10px 0px;
+  display: inline-block;
+}
+
+#searchIcon{
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 14pt;
+  margin: auto;
+  display: inline-block;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+#searchIcon:hover{
+  background-color: rgb(0, 206, 206);
+  cursor: pointer;
 }
 
 .active{
   background-color: rgb(0, 173, 173);
 }
 
-#searchContainer{
-  float: right;
-  padding: 13px;
-}
-
-#searchBar{
-  border-radius: 5px;
-  border: none;
-  padding: 2px;
-}
-
-#searchIcon{
-  background: transparent;
-  color: white;
-  border: none;
-}
-
-#searchIcon:hover{
-  cursor: pointer;
-}
 
 .logo{
   width: 75px;

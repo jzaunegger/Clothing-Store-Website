@@ -1,24 +1,24 @@
 {
     "categories":{
         "tops":{
-            "subcategoryNames": ["All", "Sweaters", "Sweatshirts", "Hoodies", "T-Shirts", "Long Sleeves", "Short Sleeve", "Tank Tops", "Jackets", "Coats", "Dress Shirts", "None"],
-            "subcategoryValues":["all", "sweater", "sweatshirt", "hoodie", "t-shirt", "long-sleeve", "short-sleeve", "tank-top", "jacket", "coat", "dress-shirts", "none"],
+            "subcategoryNames": ["All", "Sweaters", "Sweatshirts", "Hoodies", "T-Shirts", "Long Sleeves", "Short Sleeve", "Tank Tops", "Jackets", "Coats", "Dress Shirts"],
+            "subcategoryValues":["all", "sweater", "sweatshirt", "hoodie", "t-shirt", "long-sleeve", "short-sleeve", "tank-top", "jacket", "coat", "dress-shirts"],
             "sizeNames": ["Extra Small", "Small", "Medium", "Large", "Extra Large", "Extra Exta Large", "Three Extra Large"],
             "sizeValues": ["XS", "S", "M", "L", "XL", "XXL", "3XL"],
             "sizeChart": "shirts"
         },
 
         "bottoms":{
-            "subcategoryNames": ["Jeans", "Shorts", "Athletic Shorts", "Kakhis", "Dress Pants", "Skirts", "Sweat Pants", "Joggers"],
-            "subcategoryValues":["jean", "short", "athletic-short", "kakhi", "dress-pant", "skirt", "sweat-pant", "jogger"],
+            "subcategoryNames": ["Jeans", "Shorts", "Athletic Shorts", "Chinos", "Dress Pants", "Skirts", "Sweat Pants", "Joggers", "Leggings"],
+            "subcategoryValues":["jean", "short", "athletic-short", "chino", "dress-pant", "skirt", "sweat-pant", "jogger", "legging"],
             "sizeNames": ["Extra Small", "Small", "Medium", "Large", "Extra Large", "Extra Exta Large", "Three Extra Large"],
             "sizeValues": ["XS ", "S  ", "M  ", "L  ", "XL ", "XXL", "3XL"],
             "sizeChart": "pants"
         },
 
         "shoes":{
-            "subcategoryNames": ["Sneakers", "Running", "Dress", "Sandals", "Boots", "Casual"],
-            "subcategoryValues":["sneaker", "running", "dress", "sandal", "boot", "casual"],
+            "subcategoryNames": ["Sneakers", "Dress", "Sandals", "Boots", "Casual"],
+            "subcategoryValues":["sneaker", "dress", "sandal", "boot", "casual"],
             "sizeNames": [6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 13, 14, 15, 16],
             "sizeValues": ["6", "6.5", "7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13", "14", "15", "16"],
             "sizeChart": "shoes"

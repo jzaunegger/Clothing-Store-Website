@@ -1,0 +1,95 @@
+/****************************************************************************************************************/
+.Page-Content{
+    width: 80%;
+    margin-left: 10%;
+    min-height: 100vh;
+}
+
+
+/***** CSS for the Admin Page *****/
+h1{
+    background-color: #333;
+    font-size: 16pt;
+    color: white;
+    width: 100%;
+    padding: 10px;
+}
+
+.Panel{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.col1{
+    width: 30%;
+}
+
+
+.col2{
+    width: 70%;
+}
+
+.col2 img{
+    width: 100%;
+}
+
+
+.admin-button{
+    background-color: #333;
+    color: white;
+    border: none;
+    font-size: 12pt;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+.admin-button:hover{
+    cursor: pointer;
+    color: rgb(0, 173, 173);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.two-cols{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: top;
+}
+
+/***** CSS for the Table on the ProductTools.php *****/
+.ProductToolsSort{
+    float: right;
+}
+
+table{
+    border-collapse: collapse;
+    margin: auto;
+}
+
+th{
+    padding: 10px;
+}
+
+td{
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+/*** CSS for the Admin User Tools ***/
+.form-cols{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+form .form-col1{
+    width: 50%;
+}
+
+form .form-col2{
+    width: 50%;
+}
