@@ -1,0 +1,160 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Check Out</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="checkout.css">
+    <script src="https://kit.fontawesome.com/767c462c99.js"></script>
+    <meta name="robots" content="noindex,follow" />
+</head>
+
+</body>
+
+<form id="regForm" action="checkout.php" method="POST">
+    <div class="checkout-panel">
+        <div class="panel-body">
+            <!-- One "tab" for each step in the form: -->
+            <div class="tab"><h2>Shipping Information</h2>
+                <div class="input-fields">
+                    <div class="column-1">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" size="30" />
+
+                        <label for="address1">Address</label>
+                        <input type="text" name="address1" id="address1" size="30" />
+
+                        <label for="city">City</label>
+                        <input type="text" name="city" id="city" size="30" />
+
+                        <div class="small-inputs">
+                            <div>
+                                <label for="state">State</label>
+                                <input type="text" name="state" id="state" size="20" />
+                            </div>
+
+                            <div>
+                                <label for="zip">Zip Code</label>
+                                <input type="text" name="zip-code" id="zip-code" size="5" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column-2">
+                        <label for="phone">Phone</label>
+                        <input type="text" name="phone" id="phone" size="12" />
+
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email" size="30" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab"><h2>Contact Information:</h2>
+                <div class="payment-method">
+                    <label for="card" class="method card">
+                        <div class="card-logos">
+                            <i class="fab fa-cc-visa" style="color:navy;"></i>
+                            <i class="fab fa-cc-amex" style="color:blue;"></i>
+                            <i class="fab fa-cc-mastercard" style="color:red;"></i>
+                            <i class="fab fa-cc-discover" style="color:orange;"></i>
+                        </div>
+
+                        <div class="radio-input">
+                            <input id="card" type="radio" name="payment">
+                        </div>
+                    </label>
+
+                    <label for="paypal" class="method paypal">
+                        <div class="card-logos">
+                            <i class="fab fa-cc-paypal" style="color:blue;"></i>
+                        </div>
+                        <div class="radio-input">
+                            <input id="paypal" type="radio" name="payment">
+                        </div>
+                    </label>
+                </div>
+
+                <div class="input-fields">
+                    <div class="column-1">
+                        <label for="cardholder">Cardholder's Name</label>
+                        <input type="text" name="cardholder" id="cardholder" />
+                        <i class="fas fa-user" aria-hidden="true"></i>
+
+                        <div class="small-inputs">
+                            <div>
+                                <label for="date">Valid thru</label>
+                                <input type="text" placeholder="MM / YY" />
+                                <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                            </div>
+
+                            <div>
+                                <label for="verification">CVV / CVC *</label>
+                                <input type="password" />
+                                <i class="fas fa-lock" aria-hidden="true"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="column-2">
+                        <label for="cardnumber">Card Number</label>
+                        <input type="password" name="card-number" id="card-number" />
+                        <i class="far fa-credit-card" aria-hidden="true"></i>
+
+                        <span class="info">* CVV or CVC is the card security code, unique three digits number on the
+                            back of your card separate from its number.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab"><h2>Billing Address</h2>
+                <div class="input-fields">
+                    <div class="column-1">
+                        <label for="name">Name</label>
+                        <input type="text" name="billing-name" id="billing-name" size="30" />
+
+                        <label for="address1">Address</label>
+                        <input type="text" name="billing-address1" id="billing-address1" size="30"
+                            placeholder="Adderss 1" />
+
+                        <label for="city">City</label>
+                        <input type="text" name="billing-city" id="billing-city" size="30" />
+
+                        <div class="small-inputs">
+                            <div>
+                                <label for="state">State</label>
+                                <input type="text" name="billing-state" id="billing-state" size="20" />
+                            </div>
+
+                            <div>
+                                <label for="zip">Zip Code</label>
+                                <input type="text" name="billing-zip-code" id="billing-zip-code" size="5" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column-2">
+                        <label for="phone">Phone</label>
+                        <input type="text" name="billing-phone" id="billing-phone" size="12" />
+                    </div>
+                </div>
+            </div>
+
+            <div style="overflow:auto;">
+                <div style="float:right;">
+                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                </div>
+            </div>
+
+            <!-- Circles which indicates the steps of the form: -->
+            <div style="text-align:center;margin-top:40px;">
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+            </div>
+        </div>
+    </div>
+
+</form>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="checkout.js"></script>

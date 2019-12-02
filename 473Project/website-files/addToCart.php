@@ -8,12 +8,26 @@
     $size = $_GET["size"];
 
     // Check if user is logged in, echo 1 if user is logged in, echo 0 if user is not signed in.
-   if (isset($_SESSION['loggedIn'])) {
-       if($_SESSION['loggedIn'] == 1){
-            echo(1);
+   //if (isset($_SESSION['loggedIn'])) {
+       //if($_SESSION['loggedIn'] == 1){
+        if(isset($productID) & !empty($productID)){
+            if(isset($_SESSION['cart']) & !empty($_SESSION['cart'])){
+                for($i = 0; $i < $quantity; $i++){
+                    $items = $_SESSION['cart'];
+                    $cartitems = explode(",", $items);
+                
+                    $items .= "," . $productID;
+                    $_SESSION['cart'] = $items;
+                }
+                echo(1);
+                    
+            }else{
+                $items = $productID;
+                $_SESSION['cart'] = $items;
+                echo(1);
+            }
+            
+        }else{
+            echo(0);
         }
-    }
-    else{
-        echo(0);
-    }
 ?>
