@@ -121,5 +121,7 @@ function showPopup(productID){
 // Close the Popup
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function closePopup(){
-    document.getElementById("popup-container-bg").style.visibility = "hidden";
+    document.getElementById("errorBox").innnerHTML = "";
+    document.getElementById("quantityInput").value = null;
+    document.getElementById("popup-container-bg").style.visibility = "hidden";  
 }

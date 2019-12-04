@@ -67,19 +67,29 @@
                 </p>
 
                 <!--Text (Image Folder Path) -->
-                <input type="text" name="folder-path" size="75" placeholder="/473Projects/assets/images/"> 
+                <input type="text" name="folder-path" size="75" id="folderPath" placeholder="/473Projects/assets/images/..."> 
+                <input type="button" value="Validate" onclick="validateFolder();">
+                <br><br>
+                <span id="validationNotes"></span>
                 <br><br>
 
-                <!--Images (Image Files) -->
+
+                <!--Images (Image Files) 
                 <input type="file" name="input-folder[]" multiple directory webkitdirectory mozdirectory/><br>
                 <br>
+                -->
 
                 <!-- Size Quantities Table -->
-                <table>
+                <table class="adminTable">
                     <tr>
                         <th>Sizes</th>
                         <th>Quantity</th>
                     </tr>
+
+                    <tr>
+                    </tr>
+
+                    <!-- Use JS to auto-populate the size chart, based on the selected category. -->
                 </table>
                 <br>
 
@@ -92,6 +102,8 @@
         
         <!------------------------------------------------- Bottom Panel ------------------------------------------------->
         <?php include $_SERVER['DOCUMENT_ROOT'] . "/473Project/components/nav-bottom.php"; ?>
+
+        <script src="/473Project/admin/Products/Products.js"></script>
 
     </body>
 </html>

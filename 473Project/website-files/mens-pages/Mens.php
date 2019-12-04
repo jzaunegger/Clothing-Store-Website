@@ -305,7 +305,7 @@
                     </div>
 
                     <div class="popup-details-right">
-                        <label class="detail">Price</label><br>                 
+                        <label class="detail" id="productPrice">Price</label><br>                 
                         <label id="productPrice"></label> <br><br>
 
                         <label class="detail">Quantity </label><br>         

@@ -1,0 +1,130 @@
+.Page-Content{
+    width: 80%;
+    margin-left: 10%;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/**  CSS for the Cart Table **/
+.cartTable{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cartTable th{
+    background-color: #333;
+    border: 2px solid #333;
+    color: white;
+}
+
+.cartTable td{
+    border: 2px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+/**  CSS for the Total on the Cart Page **/
+.cartTotal{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.leftCol{
+    text-align: left;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-header{
+    font-size: 18pt;
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftCol i{
+    font-size: 30pt;
+    padding: 5px;
+}
+
+
+.rightCol{
+    width: 50%;
+    text-align: right;
+}
+
+.tax-amount{
+    font-size: 16pt;
+}
+
+.grand-total{
+    font-size: 20pt;
+}
+
+.removeButton{
+    background-color: transparent;
+    border: none;
+    color: black;
+}
+.removeButton:hover{
+    cursor: pointer;
+    color: rgb(0, 173, 173);
+}
+
+.checkout-button{
+    background-color: #333;
+    color: white;
+    border: none;
+    font-size: 12pt;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+.checkout-button:hover{
+    cursor: pointer;
+    color: rgb(0, 173, 173);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/** Checkout Page **/
+.shipping-area-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+.shipping-area{
+    font-size: 12pt;
+    padding: 20px;
+    width: 50%;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.checkout-element{
+    padding: 5px;
+}
+
+.nextButton{
+    float: right;
+}

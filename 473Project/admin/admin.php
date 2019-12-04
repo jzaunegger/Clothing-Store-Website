@@ -53,15 +53,15 @@
                     <h2>User Functions</h2>
                     <button class="admin-button" id="addUser" onclick="addUser();">Add User</button><br>
                     <button class="admin-button" id="editUser" onclick="editUser();">Edit User</button><br>
-                    <button class="admin-button" id="removeUser">Remove User</button><br>
+                    <button class="admin-button" id="removeUser" onclick="removeUser();">Remove User</button><br>
 
                     <h2>Product Functions</h2>
-                    <button class="admin-button" id="addProduct">Add Product</button><br>
-                    <button class="admin-button" id="editProduct">Edit Product</button><br>
-                    <button class="admin-button" id="removeProduct">Remove Product</button><br>
+                    <button class="admin-button" id="addProduct" onclick="addProduct();">Add Product</button><br>
+                    <button class="admin-button" id="editProduct" onclick="editProduct();">Edit Product</button><br>
+                    <button class="admin-button" id="removeProduct" onclick="removeProduct();">Remove Product</button><br>
                 
                     <h2>System Utilities</h2>
-                    <button class="admin-button" id="showImageFolder">View Image Folder Contents</button><br>
+                    <button class="admin-button" id="showImageFolder" onclick="viewImageContents();">View Image Folder Contents</button><br>
                 </div>
 
                 <div class="col2">

@@ -137,8 +137,9 @@ img{
 
 .popup-container{
     background-color: white;
-    width: 80%;
+    width: 75%;
     margin: auto;
+    margin-top: 1%;
     max-height: 100vh;
     overflow-y: auto;
 }
@@ -444,27 +445,4 @@ img{
     padding: 2.5%;
     width: 95%;
 }
-
-/********************************* CSS for the Folder Crawl Page *************************************/
-
-.layer2{
-    margin-left: 2.5%;
-}
-
-.layer3{
-    margin-left: 5%;
-}
-
-.layer4{
-    margin-left: 7.5%;
-}
-
-.layer5{
-    margin-left: 10%;
-}
-
-.folder-label{
-    margin-left: 1%;
-}
-
 /** CSS for the images table on the image submission page **/

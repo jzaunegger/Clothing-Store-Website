@@ -20,7 +20,7 @@
     // $url_data[3] -- mens-pages, womens-pages, unisex-pages, or name of support page
     // $url_data[4] -- name of page
 
-    echo("<ul>");
+    echo("<ul class='nav-ul'>");
         // Mens Nav Tab
         echo("<li class='dropdown'>");
             echo("<a href='/473Project/website-files/mens-pages/Mens.php'");
@@ -62,7 +62,22 @@
         echo("</li>");
 
         // Cart Button
-        echo("<li id='cartButton'> <a href='#'> <i class='fas fa-shopping-cart'></i> </a> </li>");
+        if($url_data[2] == 'shopping-cart'){
+            echo("
+            <li id='cartButton'> 
+                <a href='/473Project/shopping-cart/cart.php' class='active'> 
+                    <i class='fas fa-shopping-cart'></i> 
+                </a> 
+            </li>");
+        }
+        else{
+            echo("
+            <li id='cartButton'> 
+                <a href='/473Project/shopping-cart/cart.php'> 
+                    <i class='fas fa-shopping-cart'></i> 
+                </a> 
+            </li>");
+        }
 
         // Login-Signup-Account Button
         if($loginStatus == 1){

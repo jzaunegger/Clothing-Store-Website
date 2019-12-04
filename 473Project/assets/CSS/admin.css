@@ -78,7 +78,7 @@ td{
     text-align: center;
 }
 
-/*** CSS for the Admin User Tools ***/
+/********************************* CSS for the Admin User Tools *********************************/
 .form-cols{
     display: flex;
     flex-direction: row;
@@ -92,4 +92,31 @@ form .form-col1{
 
 form .form-col2{
     width: 50%;
+}
+
+/************************** CSS for the Product Tools **************************/
+.adminTable{
+    float: left;
+    text-align: center;
+}
+
+/********************************* CSS for the Folder Crawl Page *************************************/
+.layer2{
+    margin-left: 2.5%;
+}
+
+.layer3{
+    margin-left: 5%;
+}
+
+.layer4{
+    margin-left: 7.5%;
+}
+
+.layer5{
+    margin-left: 10%;
+}
+
+.folder-label{
+    margin-left: 1%;
 }

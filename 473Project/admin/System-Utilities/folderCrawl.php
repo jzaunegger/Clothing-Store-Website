@@ -7,7 +7,7 @@
         <title>Folder Crawl of Images</title>
         
         <link rel="stylesheet" type="text/css" href="/473Project/assets/CSS/nav.css">
-        <link rel="stylesheet" type="text/css" href="/473Project/assets/CSS/pages.css">
+        <link rel="stylesheet" type="text/css" href="/473Project/assets/CSS/admin.css">
         <script src="https://kit.fontawesome.com/767c462c99.js"></script>
     </head>
 
@@ -222,11 +222,14 @@
                 print("<br>");
                 print($image_counter . " images were found.");
                 print("<br>");
+                print("<input type='button' class='admin-button' onclick='returnToAdmin();' value='Done'>");
                 print("<br>");
             ?>
         </div>
         
         <!------------------------------------------------- Bottom Panel ------------------------------------------------->
         <?php include $_SERVER['DOCUMENT_ROOT'] . "/473Project/components/nav-bottom.php"; ?>
+
+        <script src="/473Project/admin/admin.js"></script>
     </body>
 </html>

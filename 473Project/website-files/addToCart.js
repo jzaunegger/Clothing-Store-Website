@@ -4,16 +4,23 @@ document.getElementById("addToCart").addEventListener("click", function(){
     // Clear error box
     document.getElementById("errorBox").innerHTML = "";
 
-    // Get item number, quantity, and size from popup
+    // Get productID, name, quantity, size, price from popup
     var productID = document.getElementById("itemNumber").innerHTML;
+    var name = document.getElementById("popup-product-name").innerHTML;
+    console.log(name);
     var quantity = document.getElementById("quantityInput").value;
     var size = document.getElementById("detailSizebox");
     size = size.options[size.selectedIndex].value;
+
+    // Get price and strip off the $
+    var price = document.getElementById("productPrice").innerHTML;
+    price = price.substr(1, 6);
 
     //  Check if quantity is set
     if(quantity == ''){
         quantity = 0;
     }
+
 
     // Continue if quantity is greater than 0
     if(quantity > 0){
@@ -44,7 +51,7 @@ document.getElementById("addToCart").addEventListener("click", function(){
         }
 
         // Send out the productID and check if it can be added to the cart.
-        HTTP.open("GET", "/473Project/website-files/addToCart.php?productID=" + productID + "&quantity=" + quantity + "&size=" + size, true);
+        HTTP.open("GET", "/473Project/website-files/addToCart.php?productID=" + productID + "&name="+ name + "&quantity=" + quantity + "&size=" + size + "&price=" + price, true);
         HTTP.send();
     }
     // If quantity = 0 then throw error

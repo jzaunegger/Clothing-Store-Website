@@ -420,6 +420,6 @@
 
     </div>
     
-    <script src="/473Project/admin-files/products/productLinks.js"></script>
+    <script src="/473Project/admin/admin.js"></script>
     </body>
 </html>

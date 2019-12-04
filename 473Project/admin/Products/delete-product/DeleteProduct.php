@@ -57,15 +57,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Delete Product</title>
 
-        <link rel="stylesheet" href="/473Project/admin-files/adminPages.css">
+        <link rel="stylesheet" href="/473Project/admin/adminPages.css">
         <script src="https://kit.fontawesome.com/767c462c99.js"></script>
     </head>
     
     <body>
         <div class="formBlock">
-                <!-- HTML For Top part of the form -->
-                <span>Delete Product</span> <i class="fas fa-times closeButton" onclick="returnToAdmin();"></i>
-                <hr><br>
 
                 <form action="submitDeleteProduct.php" method="POST">
 
@@ -97,14 +94,17 @@
                             <?php
                         }
                     ?>
-
-                <input type="submit" value="Remove Product">
+                <br>
+                <input type="submit" class="submitButton" value="Remove Product">
+                <input type="button" class="submitButton" value="Cancel" style="float: right;">
+                <br>
+                <br>
                 </table>
 
                 </form>
         </div>
 
         <!-- Link JS -->
-        <script src="/473Project/admin-files/products/productLinks.js"></script>
+        <script src="/473Project/admin/admin.js"></script>
     </body>
 </html>

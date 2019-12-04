@@ -47,12 +47,17 @@
             <!-- Show Admin stuff if user is logged in. -->
 
             <h1 class="Page-Title">Add User</h1>
-            <form action="submitNewUsers.php" method="POST">
+            <form action="/473Project/admin/Users/Add-User/submitNewUsers.php" method="POST">
+
+                <span>The * indidicates a required field, if any of the other blanks go unfilled a value of none is assumed.</span>
+                <br><br>
+
                 <div class="form-cols">
 
                     <div class="form-col1">
-                        Username<br>
-                        <input type="text" name="username" size="50" placeholder="Username">
+                        *Username<br>
+                        <input type="text" id="username" name="username" size="50" placeholder="Username">
+                        <input type="button" value="Check Username" onclick="checkUsername();">
                         <br><br>
 
                         First Name<br>
@@ -63,15 +68,15 @@
                         <input type="text" name="lastname" size="50" placeholder="Last Name">
                         <br><br>
 
-                        Email Address<br>
-                        <input type="email" name="email" size="50" placeholder="Email Address">
+                        *Email Address<br>
+                        <input type="email" id="email" name="email" size="50" placeholder="Email Address">
                         <br><br>
                     </div>
 
                     <div class="form-col2">
                         Phone Number <br>   
-                        <input type="text" name="areaCode" id="areaCode" maxlength="3" size="3" class="input-item" placeholder="(123)" style="text-align: center;">-
-                        <input type="text" name="phone1" id="phone1" maxlength="3" size="3" class="input-item" placeholder="456" style="text-align: center;">-
+                        <input type="text" name="areaCode" id="areaCode" maxlength="3" size="3" class="input-item" placeholder="(123)" style="text-align: center;"> -
+                        <input type="text" name="phone1" id="phone1" maxlength="3" size="3" class="input-item" placeholder="456" style="text-align: center;"> -
                         <input type="text" name="phone2" id="phone2" maxlength="4" size="4" class="input-item" placeholder="7890" style="text-align: center;">
                         <br><br>
 
@@ -81,25 +86,25 @@
                             <option value="1" >Yes</option>
                         </select> <br><br>
 
-                        Password<br>
-                        <input type="password" name="password1" size="50" placeholder="Password 1">
+                        *Password<br>
+                        <input type="password" id="pass1" name="password1" size="50" placeholder="Password 1">
                         <br><br>
 
-                        Confirm Password<br>
-                        <input type="password" name="password2" size="50" placeholder="Password 2">
+                        *Confirm Password<br>
+                        <input type="password" id="pass2" name="password2" size="50" placeholder="Password 2">
                         <br><br>
                     </div>
                 </div>
-
-                <input type='submit' class="admin-button" value="Add User">
+                <input type="button" class="admin-button" value="Cancel" onclick="returnToAdmin();">
+                <input type="button" class="admin-button" value="Check Form" onclick="validateForm()">
+                <input type="submit" class="admin-button" value="Add User" id="submitButton" style="visibility: hidden; float: right;">
             </form>
-
-            <button class="admin-button" onclick="returnToAdmin();">Cancel</button>   
         </div>    
 
         <!------------------------------------------------- Bottom Panel ------------------------------------------------->
         <?php include $_SERVER['DOCUMENT_ROOT'] . "/473Project/components/nav-bottom.php"; ?>
 
         <script src="/473Project/admin/admin.js"></script>
+        <script src="/473Project/admin/Users/Users.js"></script>
     </body>
 </html>
