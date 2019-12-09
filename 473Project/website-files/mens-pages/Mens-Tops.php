@@ -337,7 +337,8 @@
         <!------------------------------------------------- Bottom Panel ------------------------------------------------->
         <?php include $_SERVER['DOCUMENT_ROOT'] . "/473Project/components/nav-bottom.php"; ?>
 
-        <script type="text/javascript" src="/473Project/website-files/product-grid.js"></script>
-        <script type="text/javascript" src="/473Project/website-files/popup.js"></script>
+        <script src="Mens.js"></script>
+        <script src="/473Project/website-files/popup.js"></script>
+        <script src="/473Project/website-files/addToCart.js"></script>
     </body>
 </html>

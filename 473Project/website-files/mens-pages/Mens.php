@@ -16,76 +16,7 @@
 
     <body>
         <!----------------------------------- Nav Bar ----------------------------------->
-        <ul>
-           <!-- Logo that links to the index page -->
-           <li>
-                <img src="/473Project/assets/images/ZAS.png" class="logo" onclick="window.location.href='/473Project/website-files/index-page/index.html'">
-            </li>
-
-            <!-- Mens Nav Selection -->
-            <li class="dropdown">
-                 <a href="/473Project/website-files/mens-pages/Mens.php" class="active">Men's</a> 
-                    <div class="dropdown-content">
-                        <a href="/473Project/website-files/mens-pages/Mens-Tops.php">Tops</a>
-                        <a href="/473Project/website-files/mens-pages/Mens-Bottoms.php">Bottoms</a>
-                        <a href="/473Project/website-files/mens-pages/Mens-Accessories.php">Accessories</a>
-                        <a href="/473Project/website-files/mens-pages/Mens-Shoes.php">Shoes</a>
-                        <a href="/473Project/website-files/mens-pages/Mens-Swimwear.php">Swimwear</a>
-                    </div>
-            </li>
-
-
-            <!-- Womens Nav Selection -->
-            <li class="dropdown">
-                 <a href="/473Project/website-files/womens-pages/Womens.php" class="dropbtn">Women's</a>
-                    <div class="dropdown-content">
-                        <a href="/473Project/website-files/womens-pages/Womens-Tops.php">Tops</a>
-                        <a href="/473Project/website-files/womens-pages/Womens-Bottoms.php">Bottoms</a>
-                        <a href="/473Project/website-files/womens-pages/Womens-Accessories.php">Accessories</a>
-                        <a href="/473Project/website-files/womens-pages/Womens-Shoes.php">Shoes</a>
-                        <a href="/473Project/website-files/womens-pages/Womens-Swimwear.php">Swimwear</a>
-                    </div>
-            </li>
-
-            <!-- Unisex Nav Selection -->
-            <li class="dropdown">
-                 <a href="/473Project/website-files/unisex-pages/Unisex.php" class="dropbtn">Unisex</a>
-                    <div class="dropdown-content">
-                        <a href="/473Project/website-files/unisex-pages/Unisex-Tops.php">Tops</a>
-                        <a href="/473Project/website-files/unisex-pages/Unisex-Bottoms.php">Bottoms</a>
-                        <a href="/473Project/website-files/unisex-pages/Unisex-Accessories.php">Accessories</a>
-                        <a href="/473Project/website-files/unisex-pages/Unisex-Shoes.php">Shoes</a>
-                        <a href="/473Project/website-files/unisex-pages/Unisex-Swimwear.php">Swimwear</a>
-                    </div>
-            </li>
-
-            <!-- Cart Button -->
-            <li id="cartButton"> <a href="/473Project/shopping-cart/cart.php"> <i class="fas fa-shopping-cart"></i> </a> </li>
-            
-            <!-- Check if user is logged in -->
-            <?php
-                session_start();
-
-                if (isset($_SESSION['loggedIn'])) {
-                    $loginStatus = $_SESSION["loggedIn"];
-
-                    if($loginStatus == 1){
-                        echo("<li id='accountButton'> <a href='/473Project/registration/account/account.php'> <i class='fas fa-user'></i> </a> </li>");
-                    }
-                }
-                else{
-                    echo("<li id='loginButton'> <a href='/473Project/registration/login/login.html'>Login / Sign Up</a> </li>");
-                }
-            ?>
-
-            <!-- Search the website for something -->
-            <li id="searchContainer"> 
-                <form action="search.php" method="POST">
-                    <input type="text" placeholder="Search.." size="30" id="searchBar">
-                    <button type="submit" id="searchIcon"> <i class="fa fa-search"></i> </button>
-                </form>
-             </li>
-        </ul>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/473Project/components/navigation.php"; ?>
 
         <!-------------------------------------------------- Page Contents ------------------------------------------------>
         <div class="Page-Content">
@@ -166,34 +97,6 @@
                         $counter = $counter + 1;
                     }
                 }
-
-                // Create functions for filtering options
-                    // New Arrivals 
-                    function sortNewArrivals($object1, $object2){
-                        return $object1->dateAdded < $object2->dateAdded;
-                    }
-
-                    // A to Z
-                    function sortATOZ($object1, $object2){
-                        return $object1->name > $object2->name;
-                    }
-
-                    // Z to A
-                    function sortZTOA($object1, $object2){
-                        return $object1->name < $object2->name;
-                    }
-
-                    // Lowest Price
-                    function sortLowestPrice($object1, $object2){
-                        return $object1->price > $object2->price;
-                    }
-
-                    // Highest Price
-                    function sortHighestPrice($object1, $object2){
-                        return $object1->price < $object2->price;
-                    }
-
-
                     // Display the 10 random items in the slideshow
                     echo("<div class='slideshow-contianer'>");
 
@@ -256,32 +159,37 @@
 
                     // Sort By: New Arrivals
                     if($sortFlag == 1){
-                        echo("Sorting by New Arrivals");
+                        echo("Sorting by New Arrivals. <br>");
                         usort($products, 'sortNewArrivals');
+                        echo("Showing " .$counter . " results...");
                     }
 
                     // Sort By: A to Z
                     if($sortFlag == 2){
-                        echo("Sorting products by name, A to Z");
+                        echo("Sorting products by name, A to Z. <br>");
                         usort($products, 'sortATOZ');
+                        echo("Showing " .$counter . " results...");
                     }
 
                     // Sort By: Z to A
                     if($sortFlag == 3){
-                        echo("Sorting products by name, Z to A");
+                        echo("Sorting products by name, Z to A. <br>");
                         usort($products, 'sortZTOA');
+                        echo("Showing " .$counter . " results...");
                     }
 
                     // Sort By: Lowest Price
                     if($sortFlag == 4){
-                        echo("Sorting by Lowest Price");
+                        echo("Sorting by Lowest Price. <br>");
                         usort($products, 'sortLowestPrice');
+                        echo("Showing " .$counter . " results...");
                     }
 
                     // Sort By: Highest Price
                     if($sortFlag == 5){
-                        echo("Sorting by Highest Price");
+                        echo("Sorting by Highest Price. <br>");
                         usort($products, 'sortHighestPrice');
+                        echo("Showing " .$counter . " results...");
                     }
                 ?>
 
@@ -420,13 +328,8 @@
             </div>
         </div>
 
-         <!------------------------------------------------- Bottom Panel ------------------------------------------------->
-        <div class="bottom-panel">
-            <a href="/473Project/support-pages/About.php">About Us</a>
-            <a href="/473Project/support-pages/Careers.php">Careers</a>
-            <a href="/473Project/support-pages/FAQ.php">FAQ</a>
-            <a href="/473Project/support-pages/CustomerSupport.php">Customer Support</a>
-        </div>
+        <!------------------------------------------------- Bottom Panel ------------------------------------------------->
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/473Project/components/nav-bottom.php"; ?>
 
         <script src="Mens.js"></script>
         <script src="/473Project/website-files/popup.js"></script>
