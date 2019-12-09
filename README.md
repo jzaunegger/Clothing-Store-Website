@@ -4,6 +4,7 @@ This is the repository for the Clothing Store for our 473 project.
 Authors: Lauren Amicone, Victor Sansing, and Jackson Zaunegger. 
 
 This project uses XAMPP to run a test server and database. This project was developed using XAMPP version 7.1.32, and uses only HTML, CSS, JavaScript, and PHP. You can download XAMPP at the following website. 
+
     XAMPP: https://www.apachefriends.org/download.html
 
 ## Installation
@@ -23,11 +24,14 @@ For the website to make queries to the database, the MySQL Connection Files must
     Note: You do not have to have a password, however it is a highly suggested security measure. If you     
     choose not to use a password, then the My_SQLConnectionFile.php would need to be edited to account
     for the lack of password. 
-
-Next, we need to create a database. In phpMyAdmin click the Databases tab, and create a new database and call it whatever you want. In the 473 Project Folder there is a file called "SQL_Statements.txt" that contains the SQL statements needed to create the necessary tables in the database. 
-
-After the account has been configured and the tables have been created, you will need update the connection file. You will need to edit the host, user, password, and database name. You can find the file at the path: 
-
-    /473Project/assets/other/MySQL_ConnectionFile.php
     
-After creating the SQL Tables and setting your connection file up, you will need to go to the users table and make sure isAdmin is set to default 0. You will also need to do that in the usersecquestions table, and set questionsSet to 0 as well. 
+While in PHPMyAdmin you can create a new database and then select the empty database. If you click on the import button in PHPMyAdmin, you can click the browse button to upload the clothingcompany.sql file, which will add the structure and relationships of the database table, and some sample data. 
+
+## Development Notes
+This website is just starting. It needs updates to the following areas in order to be more complete and usable. The system also needs to be optimized and minimized to work more effectiently. Some example areas the system needs to fully work are:
+
+    Checkout System
+    Products for the Mens and Womens Pages
+    Admin Pages for the Products and Users
+    A Working Search Function
+
