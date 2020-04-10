@@ -15,7 +15,7 @@ Next, download the repository and move all of the files from the 473Project fold
 
     Index: /473Project/website-files/index-page/index.html
     Mens Pages: /473Project/website-files/mens-pages/Mens.php
-    Womens Pages: /473Project/website-files/womens-pages/Womens/php
+    Womens Pages: /473Project/website-files/womens-pages/Womens.php
 
 ## Configuration
 
